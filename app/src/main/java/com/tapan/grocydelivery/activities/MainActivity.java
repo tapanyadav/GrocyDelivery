@@ -1,7 +1,9 @@
-package com.tapan.grocydelivery;
+package com.tapan.grocydelivery.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.tapan.grocydelivery.R;
 
 public class MainActivity extends AppCompatActivity {
 
