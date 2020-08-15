@@ -1,3 +1,66 @@
 <resources>
     <string name="app_name">Grocy Delivery</string>
+    <string name="app_name_grocy">Grocy</string>
+
+    //splash
+    <string name="delivery_partner">delivery partner</string>
+
+    //welcome
+    <string name="welcome_deliver_goods_online">Deliver goods online</string>
+    <string name="welcome_login">Login</string>
+    <string name="welcome_signup">Signup</string>
+
+    //login
+    <string name="login_register"><u>Register</u></string>
+    <string name="register_not">Don\'t have an account ?</string>
+    <string name="login_otp_line">A six digit OTP will be sent via SMS to verify your phone number!</string>
+    <string name="login_et_number_hint">Phone Number</string>
+    <string name="login_enter_phone">Enter your phone number!</string>
+    <string name="login_send_otp">Send OTP</string>
+
+    //signup
+    <string name="regLoginText"><u>Login</u></string>
+    <string name="register_already">Already have an account?</string>
+    <string name="register_btn_next">Next</string>
+    <string name="progress_loading">Loading…</string>
+    <string name="register_sign_up">Sign up</string>
+
+    //otp
+    <string name="otp_head">OTP</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="otp_verification">OTP Verification!</string>
+    <string name="enter_otp_sent_to">Enter OTP sent to</string>
+
+    //req_docs
+    <string name="required_docs_head">Requirements</string>
+    <string name="required_docs"><u> Required docs </u></string>
+    <string name="other_things_required"><u>Other things required</u></string>
+    <string name="eligibility_criteria"><u>Eligibility criteria</u></string>
+    <string name="required_eligibility">1. You should be high school passed.\n\n2. Your age must be above 18 years.\n\n3. You must have basic knowledge of android smartphone.</string>
+    <string name="required_documents">1. Aadhar card (ID proof)\n\n2. PAN card\n\n3. Driving license\n\n4. Vehicle RC\n\n5. Account details (Passbook)\n\n6. Cancelled cheque\n\n7.High school marksheet.</string>
+    <string name="required_other">1. Own vehicle (Bike/Scooter/Cycle).\n\n2. Android phone with internet.</string>
+    <string name="required_agree">Agree</string>
+
+    //upload_docs
+    <string name="upload_documents_head">Upload Documents</string>
+    <string name="upload_aadhar">Aadhar card</string>
+    <string name="aadhar_front">Front</string>
+    <string name="aadhar_back">Back</string>
+    <string name="upload_high_school_marksheet">High school marksheet</string>
+    <string name="upload_cancelled_cheque">Cancelled cheque</string>
+    <string name="upload_passbook_first_page">Passbook first page</string>
+    <string name="upload_vehicle_rc">Vehicle RC</string>
+    <string name="upload_driving_license">Driving license</string>
+    <string name="upload_pan_card">Pan card</string>
+    <string name="upload_submit">Submit</string>
+    <string name="upload_toolbar">Upload docs</string>
+    <string name="under_review_docs">Under Review</string>
+    <string name="under_review_submitted">Your documents are submitted.</string>
+    <string name="under_review_wait">Please wait until your documents are not verified.\n\nOur executive will contact you soon.</string>
+    <string name="under_browse_all_faqs">Browse all FAQs</string>
+    <string name="under_incentives_rules">Incentives rules</string>
+    <string name="under_contact_us">Contact us</string>
+
+
 </resources>

@@ -1,10 +1,37 @@
-<resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent
+        </item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowAnimationStyle">
+            @style/ActivityAnimation
+        </item>
+    </style>
+
+    <style name="navigationTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <style name="ActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">
+            @anim/activity_open_enter
+        </item>
+        <item name="android:activityOpenExitAnimation">
+            @anim/activity_open_exit
+        </item>
+        <item name="android:activityCloseEnterAnimation">
+            @anim/activity_close_enter
+        </item>
+        <item name="android:activityCloseExitAnimation">
+            @anim/activity_close_exit
+        </item>
     </style>
 
 </resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#659BF6</color>
+    <color name="colorPrimaryDark">#5663FF</color>
+    <color name="colorAccent">#659BF6</color>
+    <color name="colorAc">#03DAC5</color>
+
+    <color name="strokeColor">#5663FF</color>
+    <color name="lightRed">#BAFF4848</color>
+    <color name="white">#fff</color>
+
+    <color name="headingColor">#4185F8</color>
+    <color name="indicator_light">#D9DCFF</color>
+
+    <color name="dark">#FF2D313D</color>
+    <color name="textColor">#FFFFFF</color>
+    <color name="text">#FF2D313D</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="cardBack">#393F53</color>
+    <color name="expandCardColor">#4C5573</color>
+    <!--    <color name="newDark">#212637</color>-->
+    <color name="nav_back_color">#212637</color>
+    //FF4F5360
+    <color name="headerColor">#FF2D313D</color>
+
+</resources>
