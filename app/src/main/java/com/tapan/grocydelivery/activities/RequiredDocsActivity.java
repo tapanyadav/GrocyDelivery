@@ -14,5 +14,6 @@ public class RequiredDocsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setToolbar(R.id.req_docs_toolbar);
     }
 }

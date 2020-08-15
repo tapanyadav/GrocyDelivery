@@ -48,7 +48,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 //        if (toolbarCheck) {
 //            toolbar.setNavigationIcon(R.drawable.icon_menu);
 //        } else {
-        toolbar.setNavigationIcon(R.drawable.icon_back_new);
+        toolbar.setNavigationIcon(R.drawable.ic_icon_back);
 //        }
         toolbar.setNavigationOnClickListener(v -> {
                     onBackPressed();

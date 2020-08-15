@@ -23,13 +23,13 @@ public class WelcomeActivity extends BaseActivity {
         btnSignUp = findViewById(R.id.btnSignup);
 
         btnLogin.setOnClickListener(v -> {
-            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+            Intent intent = new Intent(WelcomeActivity.this, UnderReviewActivity.class);
             startActivity(intent);
         });
 
 
         btnSignUp.setOnClickListener(v -> {
-            Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
+            Intent intent = new Intent(WelcomeActivity.this, RequiredDocsActivity.class);
             startActivity(intent);
         });
     }
