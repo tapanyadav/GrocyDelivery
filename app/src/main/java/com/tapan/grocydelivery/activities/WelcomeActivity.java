@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseUser;
 import com.tapan.grocydelivery.R;
 
 public class WelcomeActivity extends BaseActivity {
@@ -32,5 +33,17 @@ public class WelcomeActivity extends BaseActivity {
             Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser != null) {
+            Intent mainIntent = new Intent(WelcomeActivity.this, MainActivity.class);
+            startActivity(mainIntent);
+            finish();
+        }
     }
 }

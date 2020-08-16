@@ -10,13 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.Query;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.tapan.grocydelivery.R;
-import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.Objects;
 
@@ -28,10 +26,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     Toolbar toolbar;
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
-    Query queryMain;
     StorageReference storageReference;
-    DocumentReference documentReferenceDelPath, documentReferenceDefaultSavePath;
-    String currentUser;
+    String currentUserId;
+    FirebaseUser currentUser;
     // boolean toolbarCheck = false;
 
     @Override
@@ -42,10 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
-
-        documentReferenceDelPath = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId());
-        queryMain = firebaseFirestore.collection(Constants.mainDelCollection);
-        documentReferenceDefaultSavePath = firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid()));
+        currentUser = firebaseAuth.getCurrentUser();
 
     }
 
@@ -67,9 +61,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public String getCurrentUserId() {
         if (firebaseAuth.getCurrentUser() != null) {
-            currentUser = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
+            currentUserId = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
         }
-        return currentUser;
+        return currentUserId;
     }
 
     void setToolbar(int toolbar_id) {

@@ -22,6 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.tapan.grocydelivery.R;
+import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.Objects;
 
@@ -223,7 +224,7 @@ public class RegisterActivity extends BaseActivity {
             startActivity(intent);
         } else {
 
-            queryMain.whereEqualTo("delNumber", editTextPhone.getText().toString().trim()).get().addOnCompleteListener(task -> {
+            firebaseFirestore.collection(Constants.mainDelCollection).whereEqualTo("delNumber", editTextPhone.getText().toString().trim()).get().addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     hideProgressDialog();
                     if (Objects.requireNonNull(task.getResult()).getDocuments().size() > 0) {

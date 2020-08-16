@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.tapan.grocydelivery.R;
+import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.Objects;
 
@@ -85,7 +86,7 @@ public class LoginActivity extends BaseActivity {
         delPhone = editTextPhone.getText().toString();
         String phone_number = "+91" + delPhone;
 
-        queryMain.whereEqualTo("delNumber", delPhone).get().addOnCompleteListener(task -> {
+        firebaseFirestore.collection(Constants.mainDelCollection).whereEqualTo("delNumber", delPhone).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 hideProgressDialog();
 

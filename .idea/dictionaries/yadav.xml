@@ -2,7 +2,9 @@
   <dictionary name="yadav">
     <words>
       <w>aadhar</w>
+      <w>autofilled</w>
       <w>baloo</w>
+      <w>edmodo</w>
       <w>firestore</w>
       <w>grocy</w>
       <w>grocydelivery</w>
@@ -10,6 +12,7 @@
       <w>marksheet</w>
       <w>signup</w>
       <w>tapan</w>
+      <w>theartofdev</w>
     </words>
   </dictionary>
 </component>

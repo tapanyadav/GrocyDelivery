@@ -20,9 +20,11 @@ import androidx.annotation.NonNull;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.FirebaseTooManyRequestsException;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.tapan.grocydelivery.R;
+import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -193,6 +195,7 @@ public class OtpActivity extends BaseActivity {
     }
 
     void saveUserData() {
+        userData.put("addDocumentStatus", false);
         userData.put("delName", bundle.getString("delName"));
         userData.put("delNumber", bundle.getString("delNumber"));
         userData.put("delCity", bundle.getString("delCity"));
@@ -200,8 +203,12 @@ public class OtpActivity extends BaseActivity {
         userData.put("totalDeliveries", 0);
         userData.put("totalReviews", 0);
 
-        documentReferenceDefaultSavePath.set(userData).addOnCompleteListener(task1 -> {
+        HashMap<String, Object> updateStatus = new HashMap<>();
+
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(FirebaseAuth.getInstance().getUid())).set(userData).addOnCompleteListener(task1 -> {
             if (task1.isSuccessful()) {
+                updateStatus.put("create", true);
+                firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).collection("Documents").document("docs").set(updateStatus);
                 Toast.makeText(this, "Upload user data successfully!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(OtpActivity.this, RequiredDocsActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

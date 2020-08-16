@@ -7,23 +7,20 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.tapan.grocydelivery.R;
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends AppCompatActivity {
 
     Animation animationLogo, animationType;
     TextView textViewLogo, textViewType;
 
     @Override
-    protected int getLayoutResourceId() {
-        return R.layout.activity_splash;
-    }
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
+        setContentView(R.layout.activity_splash);
         textViewLogo = findViewById(R.id.textViewHead);
         textViewType = findViewById(R.id.textView_type);
 
