@@ -7,14 +7,18 @@ import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tapan.grocydelivery.R;
+
+import java.util.Objects;
 
 public class LoginActivity extends BaseActivity {
 
     TextView textViewRegister;
     EditText editTextPhone;
     Button buttonSendOtp;
+    String delPhone;
 
     @Override
     protected int getLayoutResourceId() {
@@ -56,24 +60,50 @@ public class LoginActivity extends BaseActivity {
                 int lenNumber = editTextPhone.getText().length();
 
                 if (lenNumber > 9) {
-
                     buttonSendOtp.setEnabled(true);
+                    hideKeyboard();
                 } else {
-
                     buttonSendOtp.setEnabled(false);
                 }
             }
         });
 
         buttonSendOtp.setOnClickListener(v -> {
-            Intent intent = new Intent(this, OtpActivity.class);
-            startActivity(intent);
+            showProgress(this);
+            loginButtonAction();
         });
 
         textViewRegister.setOnClickListener(v -> {
             Intent intent = new Intent(this, RegisterActivity.class);
             startActivity(intent);
             finish();
+        });
+    }
+
+    private void loginButtonAction() {
+
+        delPhone = editTextPhone.getText().toString();
+        String phone_number = "+91" + delPhone;
+
+        queryMain.whereEqualTo("delNumber", delPhone).get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                hideProgressDialog();
+
+                if (Objects.requireNonNull(task.getResult()).getDocuments().size() > 0) {
+                    Intent otp_intent = new Intent(LoginActivity.this, OtpActivity.class);
+                    otp_intent.putExtra("phone_number", phone_number);
+                    startActivity(otp_intent);
+                } else {
+                    Intent signUp_intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                    Toast.makeText(LoginActivity.this, "You are not Registered Yet!!", Toast.LENGTH_LONG).show();
+                    startActivity(signUp_intent);
+
+                }
+            } else {
+                Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).toString(), Toast.LENGTH_LONG).show();
+                buttonSendOtp.setEnabled(true);
+                hideProgressDialog();
+            }
         });
     }
 }

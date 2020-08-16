@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/dark"
     android:fitsSystemWindows="true">
 
@@ -50,7 +50,7 @@
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="220dp"
+            android:layout_height="0dp"
             android:src="@drawable/login_image"
             app:layout_constraintBottom_toBottomOf="@id/guidelineImage"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,18 +63,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.32" />
+            app:layout_constraintGuide_percent="0.28" />
 
         <TextView
             android:id="@+id/app_name_text"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/josefin_sans"
             android:gravity="center_horizontal"
             android:text="@string/app_name_grocy"
             android:textColor="@color/headingColor"
-            android:textSize="58sp"
+            android:textSize="52sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/del_part_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
             android:layout_marginBottom="17dp"
             android:text="@string/delivery_partner"
             android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
+            android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/del_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_name_text" />
@@ -99,11 +99,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="28dp"
             android:layout_marginBottom="12dp"
             android:text="@string/login_enter_phone"
             android:textColor="@color/textColor"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/login_NumText"
             app:layout_constraintEnd_toEndOf="parent"
@@ -114,7 +114,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_NumText"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="62dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="20dp"
@@ -143,7 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:text="@string/login_otp_line"
             android:textAlignment="textStart"
@@ -157,9 +157,9 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSendOtp"
             android:layout_width="0dp"
-            android:layout_height="66dp"
+            android:layout_height="62dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="38dp"
             android:layout_marginEnd="28dp"
             android:layout_marginBottom="12dp"
             android:enabled="false"
@@ -181,50 +181,70 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.92" />
 
-        <ImageView
-            android:id="@+id/leaves_image"
-            android:layout_width="80dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/leaves"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/guidelineLeaves"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toTopOf="@id/guidelineLeaves">
 
-        <TextView
-            android:id="@+id/account_not"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="5dp"
-            android:gravity="center_horizontal"
-            android:text="@string/register_not"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textViewRegister"
-            app:layout_constraintStart_toEndOf="@id/leaves_image"
-            app:layout_constraintTop_toBottomOf="@id/guidelineLeaves" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeavesVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.16" />
 
-        <TextView
-            android:id="@+id/textViewRegister"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="10dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:text="@string/login_register"
-            android:textColor="@color/headingColor"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/account_not"
-            app:layout_constraintTop_toBottomOf="@id/guidelineLeaves"
-            app:layout_constraintVertical_bias="0.555" />
+            <ImageView
+                android:id="@+id/leaves_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/leaves"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guidelineLeavesVertical"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/account_not"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                android:text="@string/register_not"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/leaves_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:text="@string/login_register"
+                android:textColor="@color/headingColor"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/account_not"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
