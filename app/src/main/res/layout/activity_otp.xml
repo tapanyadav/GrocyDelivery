@@ -53,8 +53,10 @@
         <ImageView
             android:id="@+id/image_header"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="0dp"
             android:src="@drawable/otp_image"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
             app:layout_constraintBottom_toBottomOf="@id/guidelineImage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.32" />
+            app:layout_constraintGuide_percent="0.28" />
 
         <TextView
             android:id="@+id/app_name_text"
@@ -77,7 +79,7 @@
             android:gravity="center_horizontal"
             android:text="@string/app_name_grocy"
             android:textColor="@color/headingColor"
-            android:textSize="58sp"
+            android:textSize="52sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/del_part_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -92,7 +94,7 @@
             android:layout_marginBottom="17dp"
             android:text="@string/delivery_partner"
             android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
+            android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/guidelineText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/app_name_text" />
@@ -102,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.52" />
+            app:layout_constraintGuide_percent="0.45" />
 
         <TextView
             android:id="@+id/otp_text"
@@ -112,7 +114,7 @@
             android:gravity="center"
             android:text="@string/otp_verification"
             android:textColor="@color/textColor"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +125,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            app:layout_constraintBottom_toTopOf="@id/linearOtp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/otp_text">
@@ -130,125 +134,192 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="38dp"
                 android:layout_marginEnd="4dp"
                 android:text="@string/enter_otp_sent_to"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="16dp"
                 android:text=""
                 android:textColor="@color/colorPrimary"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearOtp"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
             android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/linearResend"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearLayout2">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/round_corner"
                 android:focusable="true"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/round_corner"
                 android:focusable="true"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et3"
+                app:layout_constraintStart_toEndOf="@+id/et1"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et3"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/round_corner"
                 android:focusable="true"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et4"
+                app:layout_constraintStart_toEndOf="@+id/et2"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/round_corner"
                 android:focusable="true"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et5"
+                app:layout_constraintStart_toEndOf="@+id/et3"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et5"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/round_corner"
                 android:focusable="true"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/et6"
+                app:layout_constraintStart_toEndOf="@+id/et4"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et6"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="20dp"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/round_corner"
                 android:focusable="true"
                 android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/et5"
+                app:layout_constraintTop_toTopOf="parent" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearResend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/textViewResend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearOtp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/otp_code_not"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/resendCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textSize="18sp" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textViewResend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="@string/resend_otp"
             android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/guidelineOtp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineFree"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearOtp" />
+            app:layout_constraintTop_toBottomOf="@id/linearResend" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineFree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineOtp"

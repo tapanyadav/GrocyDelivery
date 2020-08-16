@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.34" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <TextView
         android:id="@+id/app_name_text"
@@ -34,7 +34,7 @@
         android:gravity="center_horizontal"
         android:text="@string/app_name_grocy"
         android:textColor="@color/headingColor"
-        android:textSize="58sp"
+        android:textSize="56sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,12 +55,13 @@
         android:id="@+id/slogan_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/josefin_sans"
         android:gravity="center_horizontal"
         android:text="@string/welcome_deliver_goods_online"
         android:textColor="@color/textColor"
-        android:textSize="28sp"
+        android:layout_marginBottom="24dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/guidelineText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,14 +72,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
+        app:layout_constraintGuide_percent="0.58" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
         android:layout_width="0dp"
-        android:layout_height="70dp"
+        android:layout_height="64dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="28dp"
         android:text="@string/welcome_login"
         android:textAllCaps="false"
@@ -89,13 +97,13 @@
         app:layout_constraintBottom_toTopOf="@id/btnSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineText" />
+        app:layout_constraintTop_toBottomOf="@id/guidelineButtons" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignup"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="64dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="28dp"

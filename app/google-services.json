@@ -1,0 +1,154 @@
+{
+  "project_info": {
+    "project_number": "156239168054",
+    "firebase_url": "https://grocy-6c5b5.firebaseio.com",
+    "project_id": "grocy-6c5b5",
+    "storage_bucket": "grocy-6c5b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156239168054:android:2ce3f5910bc6bde6264e97",
+        "android_client_info": {
+          "package_name": "com.example.grocy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156239168054-vs42jq37ij7b9hu1mm6q3a7ej3ei7grk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grocy",
+            "certificate_hash": "b75b3c00b776571fec47929c49de8d8e38ac1182"
+          }
+        },
+        {
+          "client_id": "156239168054-mnkcuq2tsfg5db84vqemnjev947qugpv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grocy",
+            "certificate_hash": "37f16fe63974d131ceea9f2298e6531e86aa5b36"
+          }
+        },
+        {
+          "client_id": "156239168054-qm8p96mkd9ejufci4ma00hiv7cgeocvc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grocy",
+            "certificate_hash": "7fb9e872e014f6ca7144f3063318ce683becba77"
+          }
+        },
+        {
+          "client_id": "156239168054-lviqnvjmi8i9ma004qbnu2ktbsuj6jhl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grocy",
+            "certificate_hash": "727913f188ecaf0235047bbfb1ae0490ce092cc5"
+          }
+        },
+        {
+          "client_id": "156239168054-3hl2poifi3a8vlmi415hqpok8p8hirp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtEdI3CH7_yo2_CzFWEWR78aifXttbh10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156239168054-3hl2poifi3a8vlmi415hqpok8p8hirp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156239168054:android:0d48f4f2d1449490264e97",
+        "android_client_info": {
+          "package_name": "com.example.user.grocybusiness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156239168054-aark46sc0jg4a9ccrrpr7m8ov0litifi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.grocybusiness",
+            "certificate_hash": "b75b3c00b776571fec47929c49de8d8e38ac1182"
+          }
+        },
+        {
+          "client_id": "156239168054-msrqt6h4khbfgfplvdsbdmpeuf3l557s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.grocybusiness",
+            "certificate_hash": "37f16fe63974d131ceea9f2298e6531e86aa5b36"
+          }
+        },
+        {
+          "client_id": "156239168054-67rfgfrsu9rdtgis0pmeneb3kl78qepe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.grocybusiness",
+            "certificate_hash": "7fb9e872e014f6ca7144f3063318ce683becba77"
+          }
+        },
+        {
+          "client_id": "156239168054-3hl2poifi3a8vlmi415hqpok8p8hirp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtEdI3CH7_yo2_CzFWEWR78aifXttbh10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156239168054-3hl2poifi3a8vlmi415hqpok8p8hirp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156239168054:android:72c5dd60d5405939264e97",
+        "android_client_info": {
+          "package_name": "com.tapan.grocydelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156239168054-3hl2poifi3a8vlmi415hqpok8p8hirp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtEdI3CH7_yo2_CzFWEWR78aifXttbh10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156239168054-3hl2poifi3a8vlmi415hqpok8p8hirp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

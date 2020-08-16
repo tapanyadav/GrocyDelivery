@@ -29,6 +29,7 @@
     <string name="otp_head">OTP</string>
     <string name="resend_otp">RESEND OTP</string>
     <string name="verify_otp">Verify OTP</string>
+    <string name="otp_code_not">Didn\'t get code yet ?</string>
     <string name="otp_verification">OTP Verification!</string>
     <string name="enter_otp_sent_to">Enter OTP sent to</string>
 
