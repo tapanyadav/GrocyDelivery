@@ -56,15 +56,38 @@
     <string name="upload_pan_card">Pan card</string>
     <string name="upload_submit">Submit</string>
     <string name="upload_toolbar">Upload docs</string>
+
+    //under_review
     <string name="under_review_docs">Under Review</string>
     <string name="under_review_submitted">Your documents are submitted.</string>
     <string name="under_review_wait">Please wait until your documents are not verified.\n\nOur executive will contact you soon.</string>
     <string name="under_browse_all_faqs">Browse all FAQs</string>
     <string name="under_incentives_rules">Incentives rules</string>
     <string name="under_contact_us">Contact us</string>
+
+    //city_not_available
     <string name="city_not_available">City Status</string>
     <string name="city_availability">Sorry! we are not available  in your city!!</string>
     <string name="stay_tuned">Stay tuned !</string>
+
+    //faq
+    <string name="faqs">FAQs</string>
+
+    //contact_us
+    <string name="contact_us">Contact Us</string>
+    <string name="contact_get_in_touch">Get in touch</string>
+    <string name="contact_hint">Please fill out the below form and we will be in touch as soon as possible.</string>
+    <string name="contact_your_name">Your name</string>
+    <string name="contact_your_email">Your email</string>
+    <string name="contact_your_message">Your message</string>
+    <string name="contact_send_message">Send message</string>
+    <string name="contact_connect_with_us">Connect with us :</string>
+    <string name="contact_phone">Phone</string>
+    <string name="contact_numbers">8760000123,\n6463361100</string>
+    <string name="contact_email">Email</string>
+    <string name="contact_email_us">grocyofficial@gmail.com</string>
+    <string name="contact_address">Address</string>
+    <string name="contact_address_us">123 City mall,New Delhi</string>
 
 
 </resources>

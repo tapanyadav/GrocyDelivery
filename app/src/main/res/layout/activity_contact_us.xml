@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:elevation="0dp">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/contact_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/loc_text_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginEnd="100dp"
+                    android:fontFamily="@font/baloo"
+                    android:gravity="center_horizontal"
+                    android:text="@string/under_contact_us"
+                    android:textColor="@color/textColor"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="52dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/contact_us_image"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/baloo"
+                android:text="@string/contact_get_in_touch"
+                android:textColor="@color/textColor"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/josefin_sans"
+                android:text="@string/contact_hint"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contact_people_name"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/round_corner"
+                android:drawablePadding="18dp"
+                android:gravity="center_vertical"
+                android:hint="@string/contact_your_name"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contact_people_email"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/round_corner"
+                android:drawablePadding="18dp"
+                android:gravity="center_vertical"
+                android:hint="@string/contact_your_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingStart="20dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/contact_message"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/round_corner"
+                android:drawablePadding="18dp"
+                android:gravity="center_vertical"
+                android:hint="@string/contact_your_message"
+                android:inputType="text"
+                android:paddingStart="20dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_send_message"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="80dp"
+                android:enabled="false"
+                android:text="@string/contact_send_message"
+                android:textAllCaps="false"
+                android:textColor="@color/textColor"
+                app:cornerRadius="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/baloo"
+                android:text="@string/contact_connect_with_us"
+                android:textColor="@color/textColor"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="38dp"
+                android:src="@drawable/phone_contact_us"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/baloo"
+                android:gravity="center_horizontal|bottom"
+                android:text="@string/contact_phone"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_numbers"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="38dp"
+                android:src="@drawable/email_contact_us"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/baloo"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_email"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_email_us"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="38dp"
+                android:src="@drawable/address_contact_us"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/baloo"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_address"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/contact_address_us"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
