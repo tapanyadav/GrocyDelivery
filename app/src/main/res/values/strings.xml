@@ -89,5 +89,35 @@
     <string name="contact_address">Address</string>
     <string name="contact_address_us">123 City mall,New Delhi</string>
 
+    //menu
+    <string name="delivery">Delivery</string>
+    <string name="notifications">Notifications</string>
+    <string name="support">Support</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="delivery_history">Delivery history</string>
+    <string name="feedback">Feedback</string>
+    <string name="about">About</string>
+    <string name="rate_us">Rate us</string>
+
+    //nav
+    <string name="openNavDrawer">Navigation Drawer Open</string>
+    <string name="closeNavDrawer">Navigation Drawer Close</string>
+    <string name="nav_header_hello">Hello!</string>
+    <string name="nav_header_unknown">Unknown</string>
+
+    //rating_dialog
+    <string name="dialog_amazing">Amazing</string>
+    <string name="dialog_give_rating">Give Rating</string>
+    <string name="dialog_no_thanks">No Thanks</string>
+    <string name="rating">We are glad to hear that you love Grocy delivery app.\nWould you like to share your experience by rating us on play store?</string>
+
+    //feedback_dialog
+    <string name="dialog_feedback_head">Send us your feedback!</string>
+    <string name="dialog_test">test@gmail.com</string>
+    <string name="feedback_dialog_et">Describe your experience here…</string>
+    <string name="feedback_dialog_send_feedback">Send Feedback</string>
+    <string name="suggestion">Do you have a suggestion or face some issues?\nLet us know in the field below.</string>
+
 
 </resources>

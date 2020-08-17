@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_delivery"
+        android:icon="@drawable/items_selector"
+        android:title="@string/delivery" />
+
+    <item
+        android:id="@+id/menu_noti"
+        android:icon="@drawable/noti_selector"
+        android:title="@string/notifications" />
+    <item
+        android:id="@+id/menu_support"
+        android:icon="@drawable/support_selector"
+        android:title="@string/support" />
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/profile_selector"
+        android:title="@string/profile" />
+</menu>

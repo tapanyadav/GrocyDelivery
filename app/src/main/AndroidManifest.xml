@@ -17,6 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.DeliveryHistoryActivity" />
+        <activity android:name=".activities.AboutUsActivity" />
         <activity android:name=".activities.ContactUsActivity" />
         <activity android:name=".activities.FaqActivity" />
         <activity android:name=".activities.UnderReviewActivity" />

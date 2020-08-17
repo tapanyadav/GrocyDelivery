@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/main"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home_outline"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/delivery"
+            android:icon="@drawable/history_fill"
+            android:title="@string/delivery_history" />
+    </group>
+
+
+    <group
+        android:id="@+id/help"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/feedback_outline"
+            android:title="@string/feedback" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/about_fill"
+            android:title="@string/about" />
+    </group>
+
+
+    <group
+        android:id="@+id/rateUs"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/rate_us"
+            android:title="@string/rate_us" />
+    </group>
+</menu>
