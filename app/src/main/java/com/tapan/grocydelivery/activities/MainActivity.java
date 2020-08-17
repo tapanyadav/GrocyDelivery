@@ -41,6 +41,11 @@ public class MainActivity extends BaseActivity {
                                 Intent intent = new Intent(MainActivity.this, RequiredDocsActivity.class);
                                 startActivity(intent);
                                 finish();
+                            } else if (Objects.equals(queryDocumentSnapshots.getDocuments().get(0).get("reviewStatus"), false)) {
+                                Toast.makeText(MainActivity.this, "Please wait! We are reviewing your documents...", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(MainActivity.this, UnderReviewActivity.class);
+                                startActivity(intent);
+                                finish();
                             }
                         }
                     });
