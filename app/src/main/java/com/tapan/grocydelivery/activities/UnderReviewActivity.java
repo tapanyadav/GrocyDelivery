@@ -16,5 +16,6 @@ public class UnderReviewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setToolbar(R.id.under_review_toolbar);
+
     }
 }

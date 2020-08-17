@@ -21,16 +21,16 @@
 
     <style name="ActivityAnimation" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">
-            @anim/activity_open_enter
+            @anim/slide_in_left
         </item>
         <item name="android:activityOpenExitAnimation">
-            @anim/activity_open_exit
+            @anim/slide_out_right
         </item>
         <item name="android:activityCloseEnterAnimation">
-            @anim/activity_close_enter
+            @anim/slide_in_right
         </item>
         <item name="android:activityCloseExitAnimation">
-            @anim/activity_close_exit
+            @anim/slide_out_left
         </item>
     </style>
 

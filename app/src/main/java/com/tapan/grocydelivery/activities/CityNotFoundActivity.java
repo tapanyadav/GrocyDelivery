@@ -14,5 +14,7 @@ public class CityNotFoundActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setToolbar(R.id.city_not_toolbar);
     }
 }

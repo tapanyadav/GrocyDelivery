@@ -62,6 +62,9 @@
     <string name="under_browse_all_faqs">Browse all FAQs</string>
     <string name="under_incentives_rules">Incentives rules</string>
     <string name="under_contact_us">Contact us</string>
+    <string name="city_not_available">City Status</string>
+    <string name="city_availability">Sorry! we are not available  in your city!!</string>
+    <string name="stay_tuned">Stay tuned !</string>
 
 
 </resources>
