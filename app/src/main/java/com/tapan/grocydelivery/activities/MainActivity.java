@@ -44,9 +44,9 @@ import java.util.Map;
 import java.util.Objects;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
+
     static final float END_SCALE = 0.7f;
     public static HashMap<String, Object> profile_activity_data;
-    //Navigation drawer and bottom navigation is added in this project...
     String phoneNumber, email;
     BottomNavigationView bottomNavigationView;
     FrameLayout frameLayout;
@@ -75,7 +75,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         coordinatorLayout = findViewById(R.id.cardLay);
-
 
         deliveryFragment = new DeliveryFragment();
         supportFragment = new SupportFragment();
@@ -115,7 +114,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView.setItemIconTintList(null);
         navigationView.getMenu().getItem(0).setChecked(true);
         toolbar.setNavigationIcon(R.drawable.ic_icon_menu);
-//        setToolbar(drawerLayout);
         animateNavigationDrawer();
 
         View view = navigationView.getHeaderView(0);

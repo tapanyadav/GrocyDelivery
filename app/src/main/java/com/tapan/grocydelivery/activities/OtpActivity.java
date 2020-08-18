@@ -28,7 +28,6 @@ import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
@@ -40,7 +39,7 @@ public class OtpActivity extends BaseActivity {
     Button btnOtpLogin;
     TextView tvResend, textViewResendTimer;
     Bundle bundle;
-    Map<String, Object> userData = new HashMap<>();
+    HashMap<String, Object> userData = new HashMap<>();
     String phone_number, phoneNumber;
     CountDownTimer countDownTimer = null;
     private EditText[] editTexts;
@@ -56,7 +55,6 @@ public class OtpActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setToolbar(R.id.otp_toolbar);
 
         et1 = findViewById(R.id.et1);

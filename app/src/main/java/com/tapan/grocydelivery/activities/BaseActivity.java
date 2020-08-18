@@ -34,7 +34,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     String currentUserId;
     FirebaseUser currentUser;
     boolean doubleBackToExitPressedOnce = false;
-    boolean toolbarCheck = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,11 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     void setToolbar(int toolbar_id) {
         toolbar = findViewById(toolbar_id);
         setSupportActionBar(toolbar);
-//        if (toolbarCheck) {
-//            toolbar.setNavigationIcon(R.drawable.icon_menu);
-//        } else {
         toolbar.setNavigationIcon(R.drawable.ic_icon_back);
-//        }
         toolbar.setNavigationOnClickListener(v -> {
                     onBackPressed();
                     finish();
