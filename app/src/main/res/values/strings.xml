@@ -119,5 +119,18 @@
     <string name="feedback_dialog_send_feedback">Send Feedback</string>
     <string name="suggestion">Do you have a suggestion or face some issues?\nLet us know in the field below.</string>
 
+    //about_us
+    <string name="about_us_head">About Us</string>
+    <string name="about_different">What makes Grocy different?</string>
+    <string name="about_team">Our awesome team</string>
+    <string name="about_contact_us">Contact Us</string>
+    <string name="about_our_social_handles">Our social handles</string>
+    <string name="about_us">We are the one for your all kind of daily needs like groceries, vegetables, medicines, stationary etc at your doorstep by your chosen shop within an hour.\n\nBasically, in our app all your nearby shops are shown and you can view and order the items from the shops and it will be deliver within an hour to your doorstep.</string>
+    <string name="mission">Our mission is to provide solution to your every possible daily needs and other goods at your door step safely.</string>
+    <string name="vision">To be India\'s most recognized platform in order to fulfill every kind of daily needs and other goods.</string>
+    <string name="values">Customer Commitment\nTeamwork\nRespect for People\nFast is better than slow</string>
+    <string name="differ">A smooth and friendly users experience that has been built to ensures the user seamless adoption.\nWe deliver all type of goods at your doorstep from your favourite store within an hour.\nFluidity and full integration cover the needs of even the most complex companies.</string>
+    <string name="about_our_vision">Our Vision</string>
+    <string name="about_designation">Designation</string>
 
 </resources>

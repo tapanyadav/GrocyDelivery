@@ -12,8 +12,8 @@
 
     <color name="headingColor">#4185F8</color>
     <color name="indicator_light">#D9DCFF</color>
-
-    <color name="dark">#FF2D313D</color>
+    //FF2D313D
+    <color name="dark">#283043</color>
     <color name="textColor">#FFFFFF</color>
     <color name="text">#FF2D313D</color>
     <color name="light_grey">#D3D3D3</color>
