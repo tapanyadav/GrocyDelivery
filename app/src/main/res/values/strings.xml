@@ -149,6 +149,8 @@
     <string name="profile_reviews">Reviews</string>
     <string name="profile_log_out">Log out</string>
     <string name="profile_app_version">Grocy delivery partner app (1.0.0)</string>
+
+    //support fragment
     <string name="support_header">Help and Support</string>
     <string name="support_popular_solutions">Popular solutions</string>
     <string name="support_incentives_rules">Incentives rules</string>
@@ -165,5 +167,17 @@
     <string name="del_under_packaging">Under packaging</string>
     <string name="del_delivery_to">Delivery to</string>
     <string name="del_mark_as_order_picked">Mark as order picked</string>
+
+    noti_reject_dialog
+    <string name="reject_warning">Warning</string>
+    <string name="reject_warning_message">Are you sure you want to reject this order request.</string>
+    <string name="reject_confirm">Confirm</string>
+    <string name="reject_cancel">Cancel</string>
+
+    //noti_fragment
+    <string name="noti_new_delivery_request">New delivery request</string>
+    <string name="noti_time">12:08 PM</string>
+    <string name="noti_accept">Accept</string>
+    <string name="noti_reject">Reject</string>
 
 </resources>

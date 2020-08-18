@@ -25,6 +25,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.models.DeliveryModel;
+import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -66,7 +67,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         });
 
 
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").document(getSnapshots().getSnapshot(position).getId())
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").document(getSnapshots().getSnapshot(position).getId())
                 .get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot documentSnapshot = task.getResult();

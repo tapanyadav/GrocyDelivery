@@ -16,8 +16,7 @@ import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.activities.BaseFragment;
 import com.tapan.grocydelivery.adapters.DeliveryAllAdapter;
 import com.tapan.grocydelivery.models.DeliveryModel;
-
-import java.util.Objects;
+import com.tapan.grocydelivery.utils.Constants;
 
 public class AllFragment extends BaseFragment {
 
@@ -35,8 +34,7 @@ public class AllFragment extends BaseFragment {
         firebaseAuth = FirebaseAuth.getInstance();
 
         showProgress(view.getContext());
-        Query query = firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
-                .collection("Notifications").whereEqualTo("allFragment", true);
+        Query query = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).collection("Notifications").whereEqualTo("allFragment", true);
         query.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 hideProgressDialog();

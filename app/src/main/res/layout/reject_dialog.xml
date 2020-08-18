@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical"
+    android:paddingBottom="20dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/josefin_sans"
+            android:gravity="center_vertical"
+            android:text="@string/reject_warning"
+            android:textColor="@color/textColor"
+            android:textSize="22sp"
+            app:drawableStartCompat="@drawable/icon_warning" />
+
+        <ImageView
+            android:id="@+id/warning_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/ic_baseline_close_blue_24"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textNoThanks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:fontFamily="@font/josefin_sans"
+        android:gravity="center"
+        android:text="@string/reject_warning_message"
+        android:textColor="@color/textColor"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            android:backgroundTint="#83AAED"
+            android:text="@string/reject_confirm"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FB6666"
+            android:drawablePadding="12dp"
+            android:text="@string/reject_cancel"
+            android:textAllCaps="false"
+            app:cornerRadius="8dp"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>
