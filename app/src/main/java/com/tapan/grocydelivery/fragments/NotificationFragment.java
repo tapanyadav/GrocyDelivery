@@ -13,7 +13,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.tapan.grocydelivery.R;
-import com.tapan.grocydelivery.activities.BaseFragment;
 import com.tapan.grocydelivery.adapters.NotificationAdapter;
 import com.tapan.grocydelivery.models.DeliveryModel;
 import com.tapan.grocydelivery.utils.Constants;

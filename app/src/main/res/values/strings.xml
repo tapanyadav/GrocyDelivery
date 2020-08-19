@@ -199,5 +199,12 @@
     <string name="open_arthurhub_android_image_cropper">ArthurHub/ Android-Image-Cropper</string>
     <string name="open_source_libraries_head">Open Source Libraries</string>
     <string name="open_zetbaitsu_compressor">zetbaitsu/ Compressor</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="system_default">System Default</string>
+    <string name="dark">Dark</string>
+    <string name="light">Light</string>
+    <string name="theme">Theme</string>
+    <string name="settings">Settings</string>
 
 </resources>

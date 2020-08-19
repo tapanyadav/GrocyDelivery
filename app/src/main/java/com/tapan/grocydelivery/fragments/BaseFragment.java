@@ -1,4 +1,4 @@
-package com.tapan.grocydelivery.activities;
+package com.tapan.grocydelivery.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Context;
