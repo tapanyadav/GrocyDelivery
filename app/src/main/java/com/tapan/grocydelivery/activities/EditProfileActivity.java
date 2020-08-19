@@ -56,6 +56,8 @@ public class EditProfileActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setToolbar(R.id.edit_profile_toolbar);
+
         imageViewDelImage = findViewById(R.id.userProfileEditImage);
         editTextName = findViewById(R.id.edit_name);
         editTextCity = findViewById(R.id.edit_city);

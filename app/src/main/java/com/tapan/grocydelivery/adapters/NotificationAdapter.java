@@ -1,5 +1,6 @@
 package com.tapan.grocydelivery.adapters;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -36,6 +37,7 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
     FirebaseAuth firebaseAuth;
     HashMap<String, Object> updateStatus = new HashMap<>();
     private Context context;
+    public ProgressDialog dialog;
 
     public NotificationAdapter(@NonNull FirestoreRecyclerOptions<DeliveryModel> options, Context context) {
         super(options);
@@ -55,7 +57,10 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         checkStatusData(holder.buttonAccept);
 
         holder.buttonReject.setOnClickListener(v -> showRejectDialog(v, getSnapshots().getSnapshot(position).getId()));
-        holder.buttonAccept.setOnClickListener(v -> updateStatusData(getSnapshots().getSnapshot(position).getId()));
+        holder.buttonAccept.setOnClickListener(v -> {
+            updateStatusData(getSnapshots().getSnapshot(position).getId());
+            showProgress(context);
+        });
     }
 
 
@@ -75,7 +80,6 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         });
     }
 
-
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -92,6 +96,7 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+                dialog.dismiss();
                 Intent intent = new Intent(context, MainActivity.class);
                 context.startActivity(intent);
                 Toast.makeText(context, "Order is added to all...", Toast.LENGTH_SHORT).show();
@@ -156,5 +161,15 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
             buttonReject = itemView.findViewById(R.id.btn_reject);
             viewGroup = itemView.findViewById(android.R.id.content);
         }
+    }
+
+    protected void showProgress(Context context) {
+        dialog = new ProgressDialog(context);
+        dialog.show();
+        dialog.setContentView(R.layout.process_dialog);
+        dialog.setCancelable(false);
+        Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawableResource(
+                android.R.color.transparent
+        );
     }
 }

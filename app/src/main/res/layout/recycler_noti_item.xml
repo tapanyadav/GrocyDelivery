@@ -112,7 +112,9 @@
                 android:text="@string/noti_accept"
                 android:textAllCaps="false"
                 app:cornerRadius="8dp"
-                app:icon="@drawable/ic_baseline_check_24_white"
+                android:textColor="@color/white"
+                app:icon="@drawable/icon_check_white"
+                app:iconTint="@color/white"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp" />
 
@@ -127,8 +129,10 @@
                 android:drawablePadding="12dp"
                 android:text="@string/noti_reject"
                 android:textAllCaps="false"
+                android:textColor="@color/white"
                 app:cornerRadius="8dp"
-                app:icon="@drawable/ic_baseline_close_24"
+                app:icon="@drawable/ic_baseline_close_blue_24"
+                app:iconTint="@color/white"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp" />
 

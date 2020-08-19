@@ -158,6 +158,7 @@
             android:layout_marginEnd="42dp"
             android:layout_marginBottom="16dp"
             android:text="@string/mark_as_order_delivered"
+            android:textColor="@color/white"
             android:textAllCaps="false"
             android:textSize="14sp"
             app:cornerRadius="8dp" />
