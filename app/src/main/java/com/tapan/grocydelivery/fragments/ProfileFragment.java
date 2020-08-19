@@ -19,7 +19,9 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.activities.AccountSettingActivity;
 import com.tapan.grocydelivery.activities.EditProfileActivity;
@@ -44,6 +46,8 @@ public class ProfileFragment extends BaseFragment {
     @Override
     public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         imageViewDelCount = view.findViewById(R.id.image_sea);
         imageViewReviewCount = view.findViewById(R.id.image_main);
         button = view.findViewById(R.id.btn_log_out);
@@ -70,7 +74,7 @@ public class ProfileFragment extends BaseFragment {
         });
 
         switchDeliveryStatus();
-        // showProgress();
+        showProgress(view.getContext());
         loadData();
         return view;
     }

@@ -27,7 +27,7 @@ public class DeliveryHistoryActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         recyclerViewDelHistory = findViewById(R.id.recycler_delivery_history);
-
+        setToolbar(R.id.history_toolbar);
         showProgress(this);
         Query query = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId())
                 .collection("Notifications").whereEqualTo("deliveryHistory", true);
