@@ -4,17 +4,17 @@ import android.os.Bundle;
 
 import com.tapan.grocydelivery.R;
 
-public class IncentivesRulesActivity extends BaseActivity {
+public class ReviewsActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_incentives_rules;
+        return R.layout.activity_reviews;
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setToolbar(R.id.incentives_rules_toolbar);
+        setToolbar(R.id.reviews_toolbar);
     }
 }

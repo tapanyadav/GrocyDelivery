@@ -225,6 +225,7 @@
     <string name="daily_incentives">If you earn 18 points in a day then you will earn Rs.180 as daily incentives.\nIf you earn 30 points in a day then you will earn Rs.300 as daily incentives.\nIf you earn 44 points in a day then you will earn Rs.440 as daily incentives.\nIf you earn 60 points in a day then you will earn Rs.600 as daily incentives.</string>
     <string name="monthly_last">If you fulfill the above criteria then you will get Rs.1000 in a month.</string>
     <string name="distance_pay">If the distance exceeds 5.5km from store and customer, then you will get some additional pay.\n\nIf distance is between 5.5km - 6.5km you will get Rs.10 extra and if distance is between 6.5km to 7.5km then you will get Rs.20 extra and if distance is above than 7.5km then you will get Rs.30 extra.</string>
+    <string name="sorry_no_review_found">Sorry! No review found for you...</string>
 
 
 </resources>
