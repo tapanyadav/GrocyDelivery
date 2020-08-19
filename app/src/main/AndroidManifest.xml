@@ -17,30 +17,69 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ReviewsActivity" />
-        <activity android:name=".activities.IncentivesRulesActivity" />
-        <activity android:name=".activities.AccountSettingActivity" />
-        <activity android:name=".activities.OpenSourceLibActivity" />
-        <activity android:name=".activities.DeliveryHistoryActivity" />
-        <activity android:name=".activities.AboutUsActivity" />
-        <activity android:name=".activities.ContactUsActivity" />
-        <activity android:name=".activities.FaqActivity" />
-        <activity android:name=".activities.UnderReviewActivity" />
-        <activity android:name=".activities.CityNotFoundActivity" />
-        <activity android:name=".activities.UploadDocsActivity" />
-        <activity android:name=".activities.RequiredDocsActivity" />
-        <activity android:name=".activities.OtpActivity" />
-        <activity android:name=".activities.RegisterActivity" />
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.WelcomeActivity" />
-        <activity android:name=".activities.SplashActivity">
+        <activity
+            android:name=".activities.EditProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ReviewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.IncentivesRulesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AccountSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.OpenSourceLibActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.DeliveryHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AboutUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ContactUsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FaqActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.UnderReviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CityNotFoundActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.UploadDocsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.RequiredDocsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.OtpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.RegisterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.WelcomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
