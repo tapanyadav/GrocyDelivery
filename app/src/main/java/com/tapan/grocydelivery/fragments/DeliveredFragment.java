@@ -46,4 +46,16 @@ public class DeliveredFragment extends BaseFragment {
 
         return view;
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        deliveredAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        deliveredAdapter.stopListening();
+    }
 }

@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -107,11 +106,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         Glide.with(context).load(deliveryModel.getShopImage()).into(imageViewShopImage);
 
         assert imageViewClose != null;
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO) {
-            imageViewClose.setImageResource(R.drawable.ic_baseline_close);
-        } else {
-            imageViewClose.setImageResource(R.drawable.ic_baseline_close_24);
-        }
+        imageViewClose.setImageResource(R.drawable.ic_baseline_close);
         imageViewClose.setOnClickListener(v -> alertDialog.dismiss());
     }
 

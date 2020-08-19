@@ -120,9 +120,6 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
                 } else {
                     delCount = 0;
                 }
-//                assert document != null;
-//                int countDeliveries = (int) document.get("totalDeliveries");
-
             }
         });
 
