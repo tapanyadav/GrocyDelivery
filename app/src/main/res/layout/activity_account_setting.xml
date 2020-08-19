@@ -95,14 +95,6 @@
                     android:text="@string/dark"
                     android:textColor="@color/textColor"
                     android:textSize="18sp" />
-
-                <RadioButton
-                    android:id="@+id/radioButtonSystem"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/system_default"
-                    android:textColor="@color/textColor"
-                    android:textSize="18sp" />
             </RadioGroup>
 
             <View

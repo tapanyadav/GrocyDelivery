@@ -11,7 +11,7 @@ import com.tapan.grocydelivery.R;
 public class AccountSettingActivity extends BaseActivity {
 
     RadioGroup radioGroup;
-    RadioButton radioButtonLight, radioButtonDark, radioButtonSystem;
+    RadioButton radioButtonLight, radioButtonDark;
     TextView textViewOpenClick;
 
     @Override
@@ -26,11 +26,11 @@ public class AccountSettingActivity extends BaseActivity {
         radioGroup = findViewById(R.id.radioGroup);
         radioButtonLight = findViewById(R.id.radioButtonLight);
         radioButtonDark = findViewById(R.id.radioButtonDark);
-        radioButtonSystem = findViewById(R.id.radioButtonSystem);
         textViewOpenClick = findViewById(R.id.text_open_click);
 
         setToolbar(R.id.setting_toolbar);
 
+        switchDayNight(radioGroup, radioButtonLight, radioButtonDark);
         textViewOpenClick.setOnClickListener(v -> {
             Intent intent = new Intent(this, OpenSourceLibActivity.class);
             startActivity(intent);

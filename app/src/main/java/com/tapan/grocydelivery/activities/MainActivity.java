@@ -80,7 +80,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         supportFragment = new SupportFragment();
         profileFragment = new ProfileFragment();
         setToolbar(drawerLayout);
-
         checkDocumentStatus();
 
         String notificationFragmentValue = getIntent().getStringExtra("notificationFragment");
@@ -156,7 +155,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     phoneNumber = task.getResult().getString("delNumber");
                     firebaseFirestore.collection(Constants.mainDelCollection).whereEqualTo("delNumber", phoneNumber).get().addOnCompleteListener(task1 -> {
                         if (task1.isSuccessful()) {
-                            Toast.makeText(this, "hello", Toast.LENGTH_SHORT).show();
                             QuerySnapshot queryDocumentSnapshots = task1.getResult();
                             assert queryDocumentSnapshots != null;
                             if (Objects.equals(queryDocumentSnapshots.getDocuments().get(0).get("addDocumentStatus"), false)) {

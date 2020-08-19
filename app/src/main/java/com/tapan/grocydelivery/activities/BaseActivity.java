@@ -2,13 +2,18 @@ package com.tapan.grocydelivery.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -34,6 +39,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     String currentUserId;
     FirebaseUser currentUser;
     boolean doubleBackToExitPressedOnce = false;
+    boolean isDefaultModeOn = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +50,49 @@ public abstract class BaseActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         currentUser = firebaseAuth.getCurrentUser();
+
+    }
+
+    void switchDayNight(RadioGroup radioGroup, RadioButton radioButtonLight, RadioButton radioButtonDark) {
+
+        int currentCheck = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (currentCheck) {
+            case Configuration.UI_MODE_NIGHT_NO:
+                // Night mode is not active, we're using the light theme
+                isDefaultModeOn = false;
+                break;
+            case Configuration.UI_MODE_NIGHT_YES:
+                Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
+                // Night mode is active, we're using dark theme
+                isDefaultModeOn = true;
+                break;
+        }
+
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", isDefaultModeOn);
+
+
+        if (isDarkModeOn) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            radioButtonDark.setChecked(true);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            radioButtonLight.setChecked(true);
+        }
+
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (radioButtonLight.isChecked()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                editor.putBoolean("isDarkModeOn", false);
+
+
+            } else if (radioButtonDark.isChecked()) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                editor.putBoolean("isDarkModeOn", true);
+            }
+            editor.apply();
+        });
 
     }
 
