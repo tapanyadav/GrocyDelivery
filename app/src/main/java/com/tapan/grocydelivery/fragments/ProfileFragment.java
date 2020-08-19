@@ -77,8 +77,7 @@ public class ProfileFragment extends BaseFragment {
 
     private void loadData() {
 
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
-                .get().addOnCompleteListener(task -> {
+        firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 hideProgressDialog();
                 DocumentSnapshot document = task.getResult();

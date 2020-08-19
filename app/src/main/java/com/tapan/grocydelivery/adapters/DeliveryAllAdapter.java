@@ -122,7 +122,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         updateStatus.put("fragmentStatus", "uDelivery");
         updateStatus.put("orderDeliveryStatus", "Under delivery");
         updateStatus.put("pickStatus", "Picked from");
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").document(documentId)
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(context, "Order is added under delivery...", Toast.LENGTH_SHORT).show();

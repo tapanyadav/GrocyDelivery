@@ -15,8 +15,7 @@ import com.google.firebase.firestore.Query;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.adapters.UnderDeliveryAdapter;
 import com.tapan.grocydelivery.models.DeliveryModel;
-
-import java.util.Objects;
+import com.tapan.grocydelivery.utils.Constants;
 
 public class UnderDeliveryFragment extends BaseFragment {
     UnderDeliveryAdapter underDeliveryAdapter;
@@ -31,8 +30,7 @@ public class UnderDeliveryFragment extends BaseFragment {
         firebaseAuth = FirebaseAuth.getInstance();
         recyclerViewUnderDelivery = view.findViewById(R.id.recycler_under_delivery);
 
-        Query query = firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
-                .collection("Notifications").whereEqualTo("fragmentStatus", "uDelivery");
+        Query query = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).collection(Constants.notificationCollection).whereEqualTo("fragmentStatus", "uDelivery");
 
         FirestoreRecyclerOptions<DeliveryModel> deliveryModelFirestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<DeliveryModel>()
                 .setQuery(query, DeliveryModel.class).build();

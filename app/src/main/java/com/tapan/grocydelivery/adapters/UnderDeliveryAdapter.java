@@ -24,6 +24,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.models.DeliveryModel;
+import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -110,7 +111,7 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
         updateStatus.put("orderDeliveryStatus", "Delivered");
 
 
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
                 .get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 DocumentSnapshot document = task.getResult();
@@ -123,7 +124,7 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
             }
         });
 
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").document(documentId)
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 delCount += 1;

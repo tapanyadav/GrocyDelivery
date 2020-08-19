@@ -41,16 +41,13 @@ public class DeliveredAdapter extends FirestoreRecyclerAdapter<DeliveryModel, De
         firebaseAuth = FirebaseAuth.getInstance();
 
         holder.textViewDeliveredUserName.setText(model.getUserName());
-//        holder.textViewDeliveredShopName.setText(model.getShopName());
         holder.textViewDeliveredUserAddress.setText(model.getUserAddress());
-//        holder.textViewDeliveredShopAddress.setText(model.getShopAddress());
         holder.textViewDeliveredOrderId.setText(model.getOrderNumberId());
         holder.textViewDeliveredOrderDateTime.setText(model.getOrderDateTime());
         String statusPick = "<u>" + model.getPickStatus() + "</u>";
         holder.textViewPickedDelivered.setText(Html.fromHtml(statusPick));
         Glide.with(context).load(model.getUserImage()).into(holder.imageViewDeliveredUserImage);
         Glide.with(context).load(model.getMapLocation()).into(holder.imageViewDeliveredMapLocation);
-//        Glide.with(context).load(model.getShopImage()).into(holder.imageViewDeliveredShopImage);
 
         holder.textViewPickedDelivered.setOnClickListener(v -> {
             ViewGroup viewGroup = holder.itemView.findViewById(android.R.id.content);
@@ -82,7 +79,6 @@ public class DeliveredAdapter extends FirestoreRecyclerAdapter<DeliveryModel, De
         Glide.with(context).load(deliveryModel.getShopImage()).into(imageViewShopImage);
         assert imageViewClose != null;
         imageViewClose.setImageResource(R.drawable.ic_baseline_close);
-
         imageViewClose.setOnClickListener(v -> alertDialog.dismiss());
     }
 

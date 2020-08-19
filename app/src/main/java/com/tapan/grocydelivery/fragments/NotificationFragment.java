@@ -30,7 +30,7 @@ public class NotificationFragment extends BaseFragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         showProgress(view.getContext());
 
-        Query query = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).collection("Notifications").whereEqualTo("fragmentStatus", "notification");
+        Query query = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).collection(Constants.notificationCollection).whereEqualTo("fragmentStatus", "notification");
         query.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 hideProgressDialog();

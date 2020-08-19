@@ -25,6 +25,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.activities.MainActivity;
 import com.tapan.grocydelivery.models.DeliveryModel;
+import com.tapan.grocydelivery.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -60,7 +61,7 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
 
     private void checkStatusData(Button buttonAcc) {
 
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").get().addOnCompleteListener(task -> {
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                     if (document.exists()) {
@@ -88,7 +89,7 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         updateStatus.put("orderDeliveryStatus", "Under packaging");
         updateStatus.put("allFragment", true);
         updateStatus.put("deliveryHistory", true);
-        firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").document(documentId)
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Intent intent = new Intent(context, MainActivity.class);
@@ -121,7 +122,7 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         assert buttonConfirm != null;
         buttonConfirm.setOnClickListener(v1 -> {
             updateStatus.put("fragmentStatus", "cancelled");
-            firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection("Notifications").document(id)
+            firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(id)
                     .update(updateStatus).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(context, "Order is added to all...", Toast.LENGTH_SHORT).show();
@@ -153,7 +154,6 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
             imageViewShopImage = itemView.findViewById(R.id.shopImage);
             buttonAccept = itemView.findViewById(R.id.btn_accept);
             buttonReject = itemView.findViewById(R.id.btn_reject);
-
             viewGroup = itemView.findViewById(android.R.id.content);
         }
     }
