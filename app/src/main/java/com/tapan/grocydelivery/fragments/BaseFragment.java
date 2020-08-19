@@ -22,7 +22,6 @@ public abstract class BaseFragment extends Fragment {
     public ProgressDialog dialog;
     public FirebaseFirestore firebaseFirestore;
     public FirebaseAuth firebaseAuth;
-
     String currentUserId;
 
     public BaseFragment() {

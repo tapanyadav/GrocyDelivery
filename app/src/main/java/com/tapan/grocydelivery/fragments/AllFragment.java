@@ -16,12 +16,10 @@ import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.adapters.DeliveryAllAdapter;
 import com.tapan.grocydelivery.models.DeliveryModel;
 import com.tapan.grocydelivery.utils.Constants;
-
 public class AllFragment extends BaseFragment {
 
     DeliveryAllAdapter deliveryAllAdapter;
     RecyclerView recyclerViewDeliveryAll;
-
 
     @Override
     public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

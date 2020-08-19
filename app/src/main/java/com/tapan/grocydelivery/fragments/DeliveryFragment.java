@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeliveryFragment extends BaseFragment {
-
     @Override
     public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_delivery, container, false);
@@ -75,4 +74,5 @@ public class DeliveryFragment extends BaseFragment {
             return fragmentTitle.get(position);
         }
     }
+
 }
