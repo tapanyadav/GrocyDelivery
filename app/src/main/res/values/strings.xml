@@ -207,4 +207,24 @@
     <string name="theme">Theme</string>
     <string name="settings">Settings</string>
 
+    //incentives activity
+    <string name="delivery_amount">Delivery amount</string>
+    <string name="distance_payout">Distance payout</string>
+    <string name="daily_incentives_head">Daily incentives</string>
+    <string name="monthly_incentives_head">Monthly incentives</string>
+    <string name="bullets">
+        <li> You have to do work minimum of 6 hours daily.</li>\n
+        <li> Do not cancel any delivery order for any reason.</li>
+    </string>
+    <string name="monthly_incentives">
+        <li> You must have minimum login time of 200+ hrs in a month.</li>\n
+        <li> It is essential to complete 220 deliveries in a month.</li>
+    </string>
+    <string name="del_amount">You will get 2 points for each delivery one for the order pickup and one for the order drop.\nFor each order you will get minimum 40 rupees(20 for pickup and 20 for drop).</string>
+    <string name="eligibility"><u>Eligibility rules</u></string>
+    <string name="daily_incentives">If you earn 18 points in a day then you will earn Rs.180 as daily incentives.\nIf you earn 30 points in a day then you will earn Rs.300 as daily incentives.\nIf you earn 44 points in a day then you will earn Rs.440 as daily incentives.\nIf you earn 60 points in a day then you will earn Rs.600 as daily incentives.</string>
+    <string name="monthly_last">If you fulfill the above criteria then you will get Rs.1000 in a month.</string>
+    <string name="distance_pay">If the distance exceeds 5.5km from store and customer, then you will get some additional pay.\n\nIf distance is between 5.5km - 6.5km you will get Rs.10 extra and if distance is between 6.5km to 7.5km then you will get Rs.20 extra and if distance is above than 7.5km then you will get Rs.30 extra.</string>
+
+
 </resources>
