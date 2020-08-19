@@ -31,10 +31,10 @@
             @anim/push_down_out
         </item>
         <item name="android:activityCloseEnterAnimation">
-            @anim/push_up_out
+            @anim/push_down_in
         </item>
         <item name="android:activityCloseExitAnimation">
-            @anim/push_down_in
+            @anim/push_up_out
         </item>
     </style>
 </resources>

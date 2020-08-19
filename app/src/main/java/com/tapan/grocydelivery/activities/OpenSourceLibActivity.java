@@ -14,5 +14,7 @@ public class OpenSourceLibActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setToolbar(R.id.open_source_toolbar);
     }
 }

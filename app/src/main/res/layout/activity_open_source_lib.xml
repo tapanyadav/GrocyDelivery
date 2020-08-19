@@ -30,8 +30,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
-
                     android:fontFamily="@font/baloo"
+                    android:layout_marginEnd="80dp"
                     android:gravity="center_horizontal"
                     android:text="@string/open_source_libraries_head"
                     android:textColor="@color/textColor"
@@ -61,6 +61,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginEnd="12dp"
                 android:scaleType="fitCenter"
+                android:layout_marginTop="12dp"
                 android:src="@drawable/cc"
                 tools:ignore="ContentDescription" />
 
