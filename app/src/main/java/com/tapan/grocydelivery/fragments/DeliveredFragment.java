@@ -5,24 +5,45 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.tapan.grocydelivery.R;
+import com.tapan.grocydelivery.activities.BaseFragment;
+import com.tapan.grocydelivery.adapters.DeliveredAdapter;
+import com.tapan.grocydelivery.models.DeliveryModel;
 
-public class DeliveredFragment extends Fragment {
+import java.util.Objects;
 
+public class DeliveredFragment extends BaseFragment {
 
-    public DeliveredFragment() {
-    }
+    DeliveredAdapter deliveredAdapter;
+    RecyclerView recyclerViewDelivered;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_delivered, container, false);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
+        recyclerViewDelivered = view.findViewById(R.id.recycler_delivered);
 
-        return inflater.inflate(R.layout.fragment_delivered, container, false);
+        Query query = firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
+                .collection("Notifications").whereEqualTo("fragmentStatus", "delivered");
+
+        FirestoreRecyclerOptions<DeliveryModel> deliveryModelFirestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<DeliveryModel>()
+                .setQuery(query, DeliveryModel.class).build();
+
+        deliveredAdapter = new DeliveredAdapter(deliveryModelFirestoreRecyclerOptions, getActivity());
+        recyclerViewDelivered.setHasFixedSize(true);
+        recyclerViewDelivered.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerViewDelivered.setAdapter(deliveredAdapter);
+        deliveredAdapter.notifyDataSetChanged();
+
+        return view;
     }
 }

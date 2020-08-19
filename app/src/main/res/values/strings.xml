@@ -179,6 +179,10 @@
     <string name="noti_time">12:08 PM</string>
     <string name="noti_accept">Accept</string>
     <string name="noti_reject">Reject</string>
+
+    //delivered_fragment
     <string name="mark_as_order_delivered">Mark as order delivered</string>
+    <string name="delivered_to">Delivered to</string>
+    <string name="delivered">Delivered</string>
 
 </resources>
