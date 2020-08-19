@@ -6,6 +6,7 @@ public class Constants {
     public static final String notificationCollection = "Notifications";
 //    public static final String mainDelCollection = "DeliveryBoy";
 
+    public static final String splashTag = "SplashActivity";
     //All image links
     public static final String linkSubu = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2FSubu.jpg?alt=media&token=e3047138-22ff-457a-8391-8dff16a8ef60";
     // public static final String linkTeal = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2FTeal%20Love.jpg?alt=media&token=cb59f863-d4f8-45ae-bd26-18ff98bd05fa";

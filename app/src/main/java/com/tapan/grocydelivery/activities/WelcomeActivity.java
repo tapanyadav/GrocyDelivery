@@ -10,6 +10,7 @@ import com.tapan.grocydelivery.R;
 public class WelcomeActivity extends BaseActivity {
 
     Button btnLogin, btnSignUp;
+    String val;
 
     @Override
     protected int getLayoutResourceId() {
@@ -23,6 +24,7 @@ public class WelcomeActivity extends BaseActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnSignUp = findViewById(R.id.btnSignup);
 
+        val = getIntent().getStringExtra("notificationFragment");
         btnLogin.setOnClickListener(v -> {
             Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);
@@ -42,6 +44,9 @@ public class WelcomeActivity extends BaseActivity {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         if (currentUser != null) {
             Intent mainIntent = new Intent(WelcomeActivity.this, MainActivity.class);
+            if (val != null) {
+                mainIntent.putExtra("notificationFragment", val);
+            }
             startActivity(mainIntent);
             finish();
         }
