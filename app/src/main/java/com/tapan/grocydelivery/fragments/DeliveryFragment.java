@@ -18,19 +18,10 @@ import com.tapan.grocydelivery.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeliveryFragment extends Fragment {
-
-    public DeliveryFragment() {
-    }
+public class DeliveryFragment extends BaseFragment {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_delivery, container, false);
 
         TabLayout tabLayout = view.findViewById(R.id.tabLayout);

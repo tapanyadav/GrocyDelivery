@@ -234,6 +234,8 @@
     <string name="edit_your_email">Your email</string>
     <string name="edit_your_city">Your city</string>
     <string name="edit_profile_head">Edit Profile</string>
+    <string name="are_you_sure_you_want_to_logout">Are you sure you want to logout?</string>
+    <string name="btn_yes_log_out">Yes, log out</string>
 
 
 </resources>
