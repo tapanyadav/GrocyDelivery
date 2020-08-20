@@ -130,6 +130,7 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
             if (task.isSuccessful()) {
                 delCount += 1;
                 updateDeliveryCount.put("totalDeliveries", delCount);
+                updateDeliveryCount.put("badgeCountUnder", 0);
                 firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
                         .update(updateDeliveryCount).addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()) {

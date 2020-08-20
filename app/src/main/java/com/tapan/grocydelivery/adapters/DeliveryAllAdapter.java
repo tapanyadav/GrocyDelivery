@@ -36,6 +36,8 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
     FirebaseAuth firebaseAuth;
     Map<String, Object> updateStatus = new HashMap<>();
     private Context context;
+    int badgeCountUnder;
+    HashMap<String, Object> updateUnderCount = new HashMap<>();
 
     public DeliveryAllAdapter(@NonNull FirestoreRecyclerOptions<DeliveryModel> options, Context context) {
         super(options);
@@ -80,7 +82,9 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
                 }
             }
         });
-        holder.buttonMarkPicked.setOnClickListener(v -> updateStatusData(getSnapshots().getSnapshot(position).getId()));
+        holder.buttonMarkPicked.setOnClickListener(v -> {
+            updateStatusData(getSnapshots().getSnapshot(position).getId());
+        });
     }
 
     private void openShopDialog(View dialogView, DeliveryModel deliveryModel) {
@@ -117,21 +121,6 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         return new MyViewHolder(view);
     }
 
-    void updateStatusData(String documentId) {
-
-        updateStatus.put("fragmentStatus", "uDelivery");
-        updateStatus.put("orderDeliveryStatus", "Under delivery");
-        updateStatus.put("pickStatus", "Picked from");
-        updateStatus.put("deliveredTo", "Delivery to");
-        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
-                .update(updateStatus).addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                Toast.makeText(context, "Order is added under delivery...", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(context, "Firestore error!!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -153,5 +142,48 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
             textViewPickFrom = itemView.findViewById(R.id.text_picked_from);
             textViewAllDeliveryTo = itemView.findViewById(R.id.all_delivery_to);
         }
+    }
+
+    void updateStatusData(String documentId) {
+
+
+        updateStatus.put("fragmentStatus", "uDelivery");
+        updateStatus.put("orderDeliveryStatus", "Under delivery");
+        updateStatus.put("pickStatus", "Picked from");
+        updateStatus.put("deliveredTo", "Delivery to");
+
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
+                .get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                assert document != null;
+                if (Objects.requireNonNull(document.getData()).containsKey("badgeCountUnder")) {
+                    badgeCountUnder = Integer.parseInt("" + document.get("badgeCountUnder"));
+                } else {
+                    badgeCountUnder = 0;
+                }
+            }
+        });
+
+
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
+                .update(updateStatus).addOnCompleteListener(task -> {
+
+            if (task.isSuccessful()) {
+                badgeCountUnder += 1;
+                updateUnderCount.put("badgeCountUnder", badgeCountUnder);
+                firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
+                        .update(updateUnderCount).addOnCompleteListener(task1 -> {
+                    if (task1.isSuccessful()) {
+                        Toast.makeText(context, "Under counter updated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, "not updated", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                Toast.makeText(context, "Order is added under delivery...", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(context, "Firestore error!!", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

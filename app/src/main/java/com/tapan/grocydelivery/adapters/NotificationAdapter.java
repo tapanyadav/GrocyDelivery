@@ -21,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.tapan.grocydelivery.R;
@@ -38,6 +39,8 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
     HashMap<String, Object> updateStatus = new HashMap<>();
     private Context context;
     public ProgressDialog dialog;
+    int badgeCountAll;
+    HashMap<String, Object> updateAllCount = new HashMap<>();
 
     public NotificationAdapter(@NonNull FirestoreRecyclerOptions<DeliveryModel> options, Context context) {
         super(options);
@@ -95,9 +98,34 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         updateStatus.put("deliveryHistory", true);
         updateStatus.put("pickStatus", "Order pick from");
         updateStatus.put("deliveredTo", "Delivery to");
+
+        firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
+                .get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DocumentSnapshot document = task.getResult();
+                assert document != null;
+                if (Objects.requireNonNull(document.getData()).containsKey("badgeCountAll")) {
+                    badgeCountAll = Integer.parseInt("" + document.get("badgeCountAll"));
+                } else {
+                    badgeCountAll = 0;
+                }
+            }
+        });
+
         firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
+
             if (task.isSuccessful()) {
+                badgeCountAll += 1;
+                updateAllCount.put("badgeCountAll", badgeCountAll);
+                firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
+                        .update(updateAllCount).addOnCompleteListener(task1 -> {
+                    if (task1.isSuccessful()) {
+                        Toast.makeText(context, "All counter updated", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(context, "not updated", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 dialog.dismiss();
                 Intent intent = new Intent(context, MainActivity.class);
                 context.startActivity(intent);
