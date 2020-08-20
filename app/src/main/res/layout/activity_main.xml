@@ -53,7 +53,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="24dp"
-                        android:src="@drawable/icon_edit_prof"
+                        android:src="@drawable/ic_icon_profile"
                         android:visibility="invisible"
                         tools:ignore="ContentDescription" />
 

@@ -26,7 +26,7 @@
             android:title="@string/feedback" />
         <item
             android:id="@+id/about"
-            android:icon="@drawable/about_fill"
+            android:icon="@drawable/ic_icon_about"
             android:title="@string/about" />
     </group>
 
@@ -36,6 +36,7 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/rate_us"
+            android:icon="@drawable/ic_rate_us"
             android:title="@string/rate_us" />
     </group>
 </menu>

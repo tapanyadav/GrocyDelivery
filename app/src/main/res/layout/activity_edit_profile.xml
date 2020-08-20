@@ -117,7 +117,7 @@
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="10dp"
-                    android:textColor="#659BF6"
+                    android:textColor="@color/textColor"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -136,7 +136,7 @@
                     android:maxLines="1"
                     android:paddingStart="20dp"
                     android:paddingEnd="10dp"
-                    android:textColor="#659BF6"
+                    android:textColor="@color/textColor"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
@@ -155,7 +155,7 @@
                     android:inputType="text"
                     android:paddingStart="20dp"
                     android:paddingEnd="10dp"
-                    android:textColor="#659BF6"
+                    android:textColor="@color/textColor"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 

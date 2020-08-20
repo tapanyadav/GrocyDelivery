@@ -58,12 +58,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         int currentCheck = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         switch (currentCheck) {
             case Configuration.UI_MODE_NIGHT_NO:
-                // Night mode is not active, we're using the light theme
                 isDefaultModeOn = false;
                 break;
             case Configuration.UI_MODE_NIGHT_YES:
                 Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
-                // Night mode is active, we're using dark theme
                 isDefaultModeOn = true;
                 break;
         }
@@ -122,7 +120,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     void setToolbar(int toolbar_id) {
         toolbar = findViewById(toolbar_id);
         setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.ic_icon_back);
+        toolbar.setNavigationIcon(R.drawable.icon_back);
         toolbar.setNavigationOnClickListener(v -> {
                     onBackPressed();
                     finish();
