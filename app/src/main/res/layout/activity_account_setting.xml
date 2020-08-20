@@ -106,6 +106,7 @@
                 android:background="@color/light_grey" />
 
             <TextView
+                android:id="@+id/text_terms_click"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -117,6 +118,7 @@
 
 
             <TextView
+                android:id="@+id/text_privacy_click"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"

@@ -12,7 +12,7 @@ public class AccountSettingActivity extends BaseActivity {
 
     RadioGroup radioGroup;
     RadioButton radioButtonLight, radioButtonDark;
-    TextView textViewOpenClick;
+    TextView textViewOpenClick, textViewTermsClick, textViewPrivacyClick;
 
     @Override
     protected int getLayoutResourceId() {
@@ -27,12 +27,26 @@ public class AccountSettingActivity extends BaseActivity {
         radioButtonLight = findViewById(R.id.radioButtonLight);
         radioButtonDark = findViewById(R.id.radioButtonDark);
         textViewOpenClick = findViewById(R.id.text_open_click);
+        textViewPrivacyClick = findViewById(R.id.text_privacy_click);
+        textViewTermsClick = findViewById(R.id.text_terms_click);
 
         setToolbar(R.id.setting_toolbar);
 
         switchDayNight(radioGroup, radioButtonLight, radioButtonDark);
         textViewOpenClick.setOnClickListener(v -> {
             Intent intent = new Intent(this, OpenSourceLibActivity.class);
+            startActivity(intent);
+        });
+
+        textViewPrivacyClick.setOnClickListener(v -> {
+            Intent intent = new Intent(this, WebViewActivity.class);
+            intent.putExtra("textName", "Privacy");
+            startActivity(intent);
+        });
+
+        textViewTermsClick.setOnClickListener(v -> {
+            Intent intent = new Intent(this, WebViewActivity.class);
+            intent.putExtra("textName", "Terms");
             startActivity(intent);
         });
     }

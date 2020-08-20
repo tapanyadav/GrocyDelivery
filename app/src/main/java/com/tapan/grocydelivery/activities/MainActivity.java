@@ -84,7 +84,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         String notificationFragmentValue = getIntent().getStringExtra("notificationFragment");
         if (notificationFragmentValue != null) {
-            Toast.makeText(this, "Hello", Toast.LENGTH_SHORT).show();
             if (notificationFragmentValue.equals("Notification Fragment"))
                 notificationFragment = new NotificationFragment();
             setFragment(new NotificationFragment());
@@ -182,7 +181,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.setCustomAnimations(R.anim.push_up_in, R.anim.push_up_out, R.anim.push_down_in, R.anim.push_down_out);
         fragmentTransaction.replace(R.id.main_fragment, fragment);
-//        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
