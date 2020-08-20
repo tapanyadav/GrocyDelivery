@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +16,6 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.utils.Constants;
@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class DeliveryFragment extends BaseFragment {
-    int badgeCountAll, badgeCountUnder, totalDeliveries;
     TabLayout tabLayout;
 
     @Override
@@ -59,28 +58,21 @@ public class DeliveryFragment extends BaseFragment {
 
     void getBadgeCount() {
 
-        firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId())
-                .get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
+        firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).addSnapshotListener((value, error) -> {
+            if (error != null) {
+                Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
+            } else {
+                assert value != null;
+                int allCount = Integer.parseInt("" + value.get("badgeCountAll"));
+                int underCount = Integer.parseInt("" + value.get("badgeCountUnder"));
+                int delCount = Integer.parseInt("" + value.get("totalDeliveries"));
 
-                assert document != null;
-                Long allCount = (Long) document.get("badgeCountAll");
-                Long underCount = (Long) document.get("badgeCountUnder");
-                Long delCount = (Long) document.get("totalDeliveries");
-
-                assert allCount != null;
-                badgeCountAll = allCount.intValue();
-                assert underCount != null;
-                badgeCountUnder = underCount.intValue();
-                assert delCount != null;
-                totalDeliveries = delCount.intValue();
 
                 BadgeDrawable badgeDrawableAll = Objects.requireNonNull(tabLayout.getTabAt(0)).getOrCreateBadge();
-                badgeDrawableAll.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getActivity()).getTheme()));
+                badgeDrawableAll.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
                 badgeDrawableAll.setHorizontalOffset(-12);
-                if (badgeCountAll != 0) {
-                    badgeDrawableAll.setNumber(badgeCountAll);
+                if (allCount != 0) {
+                    badgeDrawableAll.setNumber(allCount);
                     badgeDrawableAll.setVisible(true);
                 } else {
                     badgeDrawableAll.setNumber(0);
@@ -88,20 +80,20 @@ public class DeliveryFragment extends BaseFragment {
 
 
                 BadgeDrawable badgeDrawableUnder = Objects.requireNonNull(tabLayout.getTabAt(1)).getOrCreateBadge();
-                badgeDrawableUnder.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getActivity()).getTheme()));
+                badgeDrawableUnder.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
                 badgeDrawableUnder.setHorizontalOffset(-22);
-                if (badgeCountUnder != 0) {
-                    badgeDrawableUnder.setNumber(badgeCountUnder);
+                if (underCount != 0) {
+                    badgeDrawableUnder.setNumber(underCount);
                     badgeDrawableUnder.setVisible(true);
                 } else {
                     badgeDrawableUnder.setNumber(0);
                 }
 
                 BadgeDrawable badgeDrawableDelivered = Objects.requireNonNull(tabLayout.getTabAt(2)).getOrCreateBadge();
-                badgeDrawableDelivered.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getActivity()).getTheme()));
+                badgeDrawableDelivered.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
                 badgeDrawableDelivered.setHorizontalOffset(-16);
-                if (totalDeliveries != 0) {
-                    badgeDrawableDelivered.setNumber(totalDeliveries);
+                if (delCount != 0) {
+                    badgeDrawableDelivered.setNumber(delCount);
                     badgeDrawableDelivered.setVisible(true);
                 } else {
                     badgeDrawableDelivered.setNumber(0);
