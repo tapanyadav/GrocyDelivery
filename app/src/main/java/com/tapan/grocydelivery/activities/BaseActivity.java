@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -102,6 +105,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawableResource(
                 android.R.color.transparent
         );
+    }
+
+    public static DisplayMetrics getDeviceMetrics(Context context) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        assert wm != null;
+        Display display = wm.getDefaultDisplay();
+        display.getMetrics(metrics);
+        return metrics;
     }
 
     public void hideProgressDialog() {

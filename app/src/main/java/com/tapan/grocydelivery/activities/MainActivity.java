@@ -270,6 +270,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        Objects.requireNonNull(alertDialog.getWindow()).getAttributes().width = (int) (getDeviceMetrics(this).widthPixels * 0.9);
         Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         alertDialog.setCanceledOnTouchOutside(false);
 
@@ -331,6 +332,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+        Objects.requireNonNull(alertDialog.getWindow()).getAttributes().width = (int) (getDeviceMetrics(this).widthPixels * 0.9);
         Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         Button buttonRate = alertDialog.findViewById(R.id.btnRatingPlay);
