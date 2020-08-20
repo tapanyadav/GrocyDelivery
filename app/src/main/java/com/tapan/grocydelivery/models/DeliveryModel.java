@@ -1,14 +1,12 @@
 package com.tapan.grocydelivery.models;
 
 public class DeliveryModel {
-    String userImage, userName, userAddress, shopImage, shopName, shopAddress, orderDateTime, mapLocation, orderDate, orderDeliveryStatus, pickStatus;
-    String orderNumberId;
-    String documentId;
+    String userImage, userName, userAddress, shopImage, shopName, shopAddress, orderDateTime, mapLocation, orderDate, orderDeliveryStatus, pickStatus, deliveredTo, orderNumberId, documentId;
 
     public DeliveryModel() {
     }
 
-    public DeliveryModel(String userImage, String userName, String userAddress, String shopImage, String shopName, String shopAddress, String orderDateTime, String orderNumberId, String documentId, String mapLocation, String orderDate, String orderDeliveryStatus, String pickStatus) {
+    public DeliveryModel(String userImage, String userName, String userAddress, String shopImage, String shopName, String shopAddress, String orderDateTime, String orderNumberId, String documentId, String mapLocation, String orderDate, String orderDeliveryStatus, String pickStatus, String deliveredTo) {
         this.userImage = userImage;
         this.userName = userName;
         this.userAddress = userAddress;
@@ -22,6 +20,7 @@ public class DeliveryModel {
         this.orderDate = orderDate;
         this.orderDeliveryStatus = orderDeliveryStatus;
         this.pickStatus = pickStatus;
+        this.deliveredTo = deliveredTo;
 
     }
 
@@ -71,5 +70,9 @@ public class DeliveryModel {
 
     public String getPickStatus() {
         return pickStatus;
+    }
+
+    public String getDeliveredTo() {
+        return deliveredTo;
     }
 }

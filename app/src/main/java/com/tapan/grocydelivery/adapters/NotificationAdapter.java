@@ -93,6 +93,8 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         updateStatus.put("orderDeliveryStatus", "Under packaging");
         updateStatus.put("allFragment", true);
         updateStatus.put("deliveryHistory", true);
+        updateStatus.put("pickStatus", "Order pick from");
+        updateStatus.put("deliveredTo", "Delivery to");
         firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {

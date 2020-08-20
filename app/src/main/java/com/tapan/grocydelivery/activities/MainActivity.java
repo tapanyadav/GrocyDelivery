@@ -180,7 +180,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     private void setFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.setCustomAnimations(R.anim.activity_open_enter, R.anim.activity_open_exit, R.anim.activity_close_enter, R.anim.activity_close_exit);
+        fragmentTransaction.setCustomAnimations(R.anim.push_up_in, R.anim.push_up_out, R.anim.push_down_in, R.anim.push_down_out);
         fragmentTransaction.replace(R.id.main_fragment, fragment);
 //        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();

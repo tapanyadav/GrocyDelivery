@@ -108,13 +108,12 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="6dp"
                 android:layout_weight="1"
-                android:backgroundTint="#83AAED"
                 android:text="@string/noti_accept"
                 android:textAllCaps="false"
                 app:cornerRadius="8dp"
-                android:textColor="@color/white"
+                android:textColor="@color/disabled_text_color"
                 app:icon="@drawable/icon_check_white"
-                app:iconTint="@color/white"
+                app:iconTint="@color/disabled_text_color"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp" />
 

@@ -109,6 +109,7 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
 
         updateStatus.put("fragmentStatus", "delivered");
         updateStatus.put("orderDeliveryStatus", "Delivered");
+        updateStatus.put("deliveredTo", "Delivered to");
 
 
         firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())

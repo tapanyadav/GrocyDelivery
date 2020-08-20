@@ -26,13 +26,13 @@
             @anim/push_up_in
         </item>
         <item name="android:activityOpenExitAnimation">
-            @anim/push_down_out
+            @anim/push_up_out
         </item>
         <item name="android:activityCloseEnterAnimation">
             @anim/push_down_in
         </item>
         <item name="android:activityCloseExitAnimation">
-            @anim/push_up_out
+            @anim/push_down_out
         </item>
     </style>
 </resources>

@@ -55,7 +55,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         holder.textViewDeliveryStatus.setText(model.getOrderDeliveryStatus());
         String statusPick = "<u>" + model.getPickStatus() + "</u>";
         holder.textViewPickFrom.setText(Html.fromHtml(statusPick));
-
+        holder.textViewAllDeliveryTo.setText(model.getDeliveredTo());
         Glide.with(context).load(model.getUserImage()).into(holder.imageViewUserImage);
         Glide.with(context).load(model.getMapLocation()).into(holder.imageViewMapLocation);
 
@@ -122,6 +122,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         updateStatus.put("fragmentStatus", "uDelivery");
         updateStatus.put("orderDeliveryStatus", "Under delivery");
         updateStatus.put("pickStatus", "Picked from");
+        updateStatus.put("deliveredTo", "Delivery to");
         firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid()).collection(Constants.notificationCollection).document(documentId)
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -134,7 +135,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView textViewUserName, textViewUserAddress, textViewOrderId, textViewOrderDateTime, textViewDeliveryStatus, textViewPickFrom;
+        private TextView textViewUserName, textViewUserAddress, textViewOrderId, textViewOrderDateTime, textViewDeliveryStatus, textViewPickFrom, textViewAllDeliveryTo;
         private ImageView imageViewUserImage, imageViewMapLocation;
         private Button buttonMarkPicked;
 
@@ -150,6 +151,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
             imageViewMapLocation = itemView.findViewById(R.id.mapSnapshot);
             textViewDeliveryStatus = itemView.findViewById(R.id.delivery_all_status);
             textViewPickFrom = itemView.findViewById(R.id.text_picked_from);
+            textViewAllDeliveryTo = itemView.findViewById(R.id.all_delivery_to);
         }
     }
 }
