@@ -36,7 +36,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
     FirebaseAuth firebaseAuth;
     Map<String, Object> updateStatus = new HashMap<>();
     private Context context;
-    int badgeCountUnder;
+    int badgeCountUnder, monthlyPoints, dailyCounts;
     HashMap<String, Object> updateUnderCount = new HashMap<>();
 
     public DeliveryAllAdapter(@NonNull FirestoreRecyclerOptions<DeliveryModel> options, Context context) {
@@ -84,6 +84,7 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
         });
         holder.buttonMarkPicked.setOnClickListener(v -> {
             updateStatusData(getSnapshots().getSnapshot(position).getId());
+            notifyDataSetChanged();
         });
     }
 
@@ -162,6 +163,16 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
                 } else {
                     badgeCountUnder = 0;
                 }
+                if (Objects.requireNonNull(document.getData()).containsKey("monthlyPoints")) {
+                    monthlyPoints = Integer.parseInt("" + document.get("monthlyPoints"));
+                } else {
+                    monthlyPoints = 0;
+                }
+                if (Objects.requireNonNull(document.getData()).containsKey("dailyCounts")) {
+                    dailyCounts = Integer.parseInt("" + document.get("dailyCounts"));
+                } else {
+                    dailyCounts = 0;
+                }
             }
         });
 
@@ -171,7 +182,12 @@ public class DeliveryAllAdapter extends FirestoreRecyclerAdapter<DeliveryModel, 
 
             if (task.isSuccessful()) {
                 badgeCountUnder += 1;
+                dailyCounts += 1;
+                monthlyPoints += 1;
                 updateUnderCount.put("badgeCountUnder", badgeCountUnder);
+                updateUnderCount.put("dailyCounts", dailyCounts);
+                updateUnderCount.put("monthlyPoints", monthlyPoints);
+
                 firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
                         .update(updateUnderCount).addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()) {

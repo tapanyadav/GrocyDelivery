@@ -40,8 +40,8 @@ public class ProfileFragment extends BaseFragment {
     SwitchMaterial switchMaterialDeliveryButton;
     HashMap<String, Object> switchStatus = new HashMap<>();
     boolean isSharedPrefs;
-    TextView textViewCountDel, textViewCountReviews, textViewDelBoyName;
-    int countDeliveries, countReviews;
+    TextView textViewCountDel, textViewCountReviews, textViewDelBoyName, textViewTodayPoint, textViewMonthlyPoint;
+    int countDeliveries, countReviews, todayCount, monthlyCount;
 
     @Override
     public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -58,6 +58,8 @@ public class ProfileFragment extends BaseFragment {
         textViewDelBoyName = view.findViewById(R.id.del_boy_name);
         textViewCountDel = view.findViewById(R.id.deliveriesCount);
         textViewCountReviews = view.findViewById(R.id.reviewsCount);
+        textViewTodayPoint = view.findViewById(R.id.text_today_points);
+        textViewMonthlyPoint = view.findViewById(R.id.text_monthly_points);
 
         Glide.with(view.getContext()).load(Constants.linkGradientMain).placeholder(R.drawable.loading_new).into(imageViewReviewCount);
         Glide.with(view.getContext()).load(Constants.linkSubu).placeholder(R.drawable.loading_new).into(imageViewDelCount);
@@ -89,13 +91,16 @@ public class ProfileFragment extends BaseFragment {
                 countDeliveries = Integer.parseInt("" + document.get("totalDeliveries"));
                 countReviews = Integer.parseInt("" + document.get("totalReviews"));
                 textViewDelBoyName.setText(document.getString("delName"));
+                todayCount = Integer.parseInt("" + document.get("dailyCounts"));
+                monthlyCount = Integer.parseInt("" + document.get("monthlyPoints"));
                 textViewCountDel.setText(String.valueOf(countDeliveries));
                 textViewCountReviews.setText(String.valueOf(countReviews));
+                textViewTodayPoint.setText(String.valueOf(todayCount));
+                textViewMonthlyPoint.setText(String.valueOf(monthlyCount));
             }
         });
-
-
     }
+
 
     private void switchDeliveryStatus() {
 

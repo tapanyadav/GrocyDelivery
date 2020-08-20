@@ -37,7 +37,7 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
     FirebaseAuth firebaseAuth;
     Map<String, Object> updateStatus = new HashMap<>();
     HashMap<String, Object> updateDeliveryCount = new HashMap<>();
-    int delCount;
+    int delCount, monthlyPoints, dailyCounts;
 
     public UnderDeliveryAdapter(@NonNull FirestoreRecyclerOptions<DeliveryModel> options, Context context) {
         super(options);
@@ -122,6 +122,16 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
                 } else {
                     delCount = 0;
                 }
+                if (Objects.requireNonNull(document.getData()).containsKey("monthlyPoints")) {
+                    monthlyPoints = Integer.parseInt("" + document.get("monthlyPoints"));
+                } else {
+                    monthlyPoints = 0;
+                }
+                if (Objects.requireNonNull(document.getData()).containsKey("dailyCounts")) {
+                    dailyCounts = Integer.parseInt("" + document.get("dailyCounts"));
+                } else {
+                    dailyCounts = 0;
+                }
             }
         });
 
@@ -129,8 +139,13 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
                 .update(updateStatus).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 delCount += 1;
+                dailyCounts += 1;
+                monthlyPoints += 1;
                 updateDeliveryCount.put("totalDeliveries", delCount);
                 updateDeliveryCount.put("badgeCountUnder", 0);
+                updateDeliveryCount.put("dailyCounts", dailyCounts);
+                updateDeliveryCount.put("monthlyPoints", monthlyPoints);
+
                 firebaseFirestore.collection("DeliveryBoy").document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
                         .update(updateDeliveryCount).addOnCompleteListener(task1 -> {
                     if (task1.isSuccessful()) {

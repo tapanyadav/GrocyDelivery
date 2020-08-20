@@ -21,8 +21,11 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
-                android:src="@drawable/profile_page"
+                android:layout_height="260dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/profile_image"
                 tools:ignore="ContentDescription" />
 
             <TextView
@@ -92,6 +95,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/text_today_points"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="8dp"
@@ -132,6 +136,7 @@
                             android:textSize="14sp" />
 
                         <TextView
+                            android:id="@+id/text_monthly_points"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingStart="8dp"

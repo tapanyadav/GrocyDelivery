@@ -58,15 +58,7 @@ public class DeliveryFragment extends BaseFragment {
     }
 
     void getBadgeCount() {
-//        firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).addSnapshotListener((value, error) -> {
-//            if (error!=null){
-//                Log.w("TAG", "listen:error", error);
-//            }
-//            assert value != null;
-//            if (value.exists()){
-//
-//            }
-//        });
+
         firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId())
                 .get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
@@ -148,59 +140,5 @@ public class DeliveryFragment extends BaseFragment {
         public CharSequence getPageTitle(int position) {
             return fragmentTitle.get(position);
         }
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId())
-                .get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                DocumentSnapshot document = task.getResult();
-
-                assert document != null;
-                Long allCount = (Long) document.get("badgeCountAll");
-                Long underCount = (Long) document.get("badgeCountUnder");
-                Long delCount = (Long) document.get("totalDeliveries");
-
-                assert allCount != null;
-                badgeCountAll = allCount.intValue();
-                assert underCount != null;
-                badgeCountUnder = underCount.intValue();
-                assert delCount != null;
-                totalDeliveries = delCount.intValue();
-
-                BadgeDrawable badgeDrawableAll = Objects.requireNonNull(tabLayout.getTabAt(0)).getOrCreateBadge();
-                badgeDrawableAll.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getActivity()).getTheme()));
-                badgeDrawableAll.setHorizontalOffset(-12);
-                if (badgeCountAll != 0) {
-                    badgeDrawableAll.setNumber(badgeCountAll);
-                    badgeDrawableAll.setVisible(true);
-                } else {
-                    badgeDrawableAll.setNumber(0);
-                }
-
-
-                BadgeDrawable badgeDrawableUnder = Objects.requireNonNull(tabLayout.getTabAt(1)).getOrCreateBadge();
-                badgeDrawableUnder.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getActivity()).getTheme()));
-                badgeDrawableUnder.setHorizontalOffset(-22);
-                if (badgeCountUnder != 0) {
-                    badgeDrawableUnder.setNumber(badgeCountUnder);
-                    badgeDrawableUnder.setVisible(true);
-                } else {
-                    badgeDrawableUnder.setNumber(0);
-                }
-
-                BadgeDrawable badgeDrawableDelivered = Objects.requireNonNull(tabLayout.getTabAt(2)).getOrCreateBadge();
-                badgeDrawableDelivered.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getActivity()).getTheme()));
-                badgeDrawableDelivered.setHorizontalOffset(-16);
-                if (totalDeliveries != 0) {
-                    badgeDrawableDelivered.setNumber(totalDeliveries);
-                    badgeDrawableDelivered.setVisible(true);
-                } else {
-                    badgeDrawableDelivered.setNumber(0);
-                }
-            }
-        });
     }
 }
