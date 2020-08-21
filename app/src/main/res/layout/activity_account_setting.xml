@@ -135,6 +135,7 @@
                 android:layout_marginTop="10dp"
                 android:clickable="true"
                 android:focusable="true"
+                android:layout_marginBottom="12dp"
                 android:text="@string/open_source_libraries_head"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp" />

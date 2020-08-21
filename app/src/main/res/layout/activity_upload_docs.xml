@@ -431,7 +431,7 @@
                 android:text="@string/upload_submit"
                 android:textAllCaps="false"
                 android:textSize="16sp"
-                android:textColor="@color/textColor"
+                android:textColor="@color/disabled_text_color"
                 app:cornerRadius="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

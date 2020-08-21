@@ -150,7 +150,7 @@
                 android:enabled="false"
                 android:text="@string/contact_send_message"
                 android:textAllCaps="false"
-                android:textColor="@color/textColor"
+                android:textColor="@color/disabled_text_color"
                 app:cornerRadius="10dp" />
 
             <TextView

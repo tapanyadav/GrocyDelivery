@@ -29,11 +29,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center_horizontal"
-                    android:layout_marginEnd="100dp"
+                    android:layout_marginEnd="60dp"
                     android:fontFamily="@font/baloo"
                     android:gravity="center_horizontal"
                     android:textColor="@color/textColor"
-                    android:textSize="22sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 

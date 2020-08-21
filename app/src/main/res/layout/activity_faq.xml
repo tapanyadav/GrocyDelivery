@@ -64,7 +64,6 @@
             android:layout_height="match_parent"
             android:layout_below="@id/faq_image"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
             android:scrollbars="none" />
 
     </RelativeLayout>

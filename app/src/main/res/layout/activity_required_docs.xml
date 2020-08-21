@@ -185,7 +185,7 @@
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="20dp"
                 android:text="@string/required_agree"
-                android:textColor="@color/textColor"
+                android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textSize="16sp"
                 app:cornerRadius="8dp" />
