@@ -200,6 +200,10 @@ public class OtpActivity extends BaseActivity {
         userData.put("delEmail", bundle.getString("delEmail"));
         userData.put("totalDeliveries", 0);
         userData.put("totalReviews", 0);
+        userData.put("badgeCountAll", 0);
+        userData.put("badgeCountUnder", 0);
+        userData.put("dailyCounts", 0);
+        userData.put("monthlyPoints", 0);
 
         HashMap<String, Object> updateStatus = new HashMap<>();
 
