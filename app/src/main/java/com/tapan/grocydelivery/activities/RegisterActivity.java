@@ -259,7 +259,9 @@ public class RegisterActivity extends BaseActivity {
         ClickableSpan clickableSpan1 = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
-                Toast.makeText(RegisterActivity.this, "One", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RegisterActivity.this, WebViewActivity.class);
+                intent.putExtra("textName", "Terms");
+                startActivity(intent);
             }
 
             @Override
@@ -269,15 +271,7 @@ public class RegisterActivity extends BaseActivity {
             }
         };
 
-        ClickableSpan clickableSpan2 = new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View widget) {
-                Toast.makeText(RegisterActivity.this, "Two", Toast.LENGTH_SHORT).show();
-            }
-        };
-
-        ss.setSpan(clickableSpan1, 11, 16, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ss.setSpan(clickableSpan2, 21, 31, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(clickableSpan1, 11, 31, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         checkBox.setText(ss);
         checkBox.setMovementMethod(LinkMovementMethod.getInstance());

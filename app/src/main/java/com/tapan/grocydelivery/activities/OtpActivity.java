@@ -221,7 +221,6 @@ public class OtpActivity extends BaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (countDownTimer != null) {
-            Toast.makeText(this, "Finish", Toast.LENGTH_SHORT).show();
             countDownTimer.cancel();
         }
     }

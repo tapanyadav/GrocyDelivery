@@ -24,7 +24,6 @@ public class ContactUsActivity extends BaseActivity {
     private TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
         }
 
         @Override
@@ -33,9 +32,7 @@ public class ContactUsActivity extends BaseActivity {
             name = editTextContactName.getText().toString().trim();
             email = editTextContactEmail.getText().toString().trim();
             message = editTextContactMessage.getText().toString().trim();
-
             buttonSendMessage.setEnabled(!name.isEmpty() && validEmail(email) && !message.isEmpty());
-
         }
 
         @Override
@@ -61,14 +58,11 @@ public class ContactUsActivity extends BaseActivity {
         loadDefaultData();
 
         editTextContactName.addTextChangedListener(textWatcher);
-
         editTextContactMessage.addTextChangedListener(textWatcher);
-
         editTextContactEmail.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
@@ -80,15 +74,10 @@ public class ContactUsActivity extends BaseActivity {
                 } else {
                     editTextContactEmail.setBackgroundResource(R.drawable.round_corner);
                 }
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
-//                if (!validEmail(editTextContactEmail.getText().toString().trim())) {
-//                    editTextContactEmail.setError(null);
-//                }
 
                 if (!editTextContactName.getText().toString().trim().isEmpty() && validEmail(editTextContactEmail.getText().toString().trim()) && !editTextContactMessage.getText().toString().trim().isEmpty()) {
                     buttonSendMessage.setEnabled(true);
@@ -107,7 +96,6 @@ public class ContactUsActivity extends BaseActivity {
                 saveData();
             }
         });
-
     }
 
     private void loadDefaultData() {
@@ -116,7 +104,6 @@ public class ContactUsActivity extends BaseActivity {
             if (task.isSuccessful()) {
                 delName = Objects.requireNonNull(task.getResult()).getString("delName");
                 delEmail = task.getResult().getString("delEmail");
-
                 editTextContactName.setText(delName);
                 editTextContactEmail.setText(delEmail);
             }
@@ -132,7 +119,6 @@ public class ContactUsActivity extends BaseActivity {
         showProgress(this);
         HashMap<String, Object> saveQuery = new HashMap<>();
 
-
         saveQuery.put("queryPersonName", name);
         saveQuery.put("queryPersonEmail", email);
         saveQuery.put("queryPersonMessage", message);
@@ -147,7 +133,6 @@ public class ContactUsActivity extends BaseActivity {
                 editTextContactEmail.setText(delEmail);
                 Toast.makeText(this, "Your message is received successfully! we are in touch asap...", Toast.LENGTH_SHORT).show();
             } else {
-//               progressDialog.dismiss();
                 hideProgressDialog();
                 Toast.makeText(this, "Firestore error!!", Toast.LENGTH_SHORT).show();
             }

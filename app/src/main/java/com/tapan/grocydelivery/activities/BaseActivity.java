@@ -53,7 +53,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
         currentUser = firebaseAuth.getCurrentUser();
-
     }
 
     public void checkDayNight() {
@@ -64,12 +63,10 @@ public abstract class BaseActivity extends AppCompatActivity {
         int currentCheck = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         switch (currentCheck) {
             case Configuration.UI_MODE_NIGHT_NO:
-                Toast.makeText(this, "Light: " + isDefaultModeOn, Toast.LENGTH_SHORT).show();
                 editorCheck.putBoolean("isDefaultModeOn", false);
                 editorCheck.apply();
                 break;
             case Configuration.UI_MODE_NIGHT_YES:
-                Toast.makeText(this, "Dark: " + isDefaultModeOn, Toast.LENGTH_SHORT).show();
                 editorCheck.putBoolean("isDefaultModeOn", true);
                 editorCheck.apply();
                 break;
@@ -81,7 +78,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();
         final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", isDefaultModeOn);
-
 
         if (isDarkModeOn) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
