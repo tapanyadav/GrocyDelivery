@@ -69,4 +69,12 @@ public abstract class BaseFragment extends Fragment {
         }
         return currentUserId;
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (dialog != null && dialog.isShowing()) {
+            dialog.cancel();
+        }
+    }
 }

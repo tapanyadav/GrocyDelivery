@@ -222,7 +222,7 @@ public class OtpActivity extends BaseActivity {
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         if (countDownTimer != null) {
             countDownTimer.cancel();

@@ -107,7 +107,7 @@
                     app:layout_constraintGuide_percent="0.5" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/img_aadhar_front"
+                    android:id="@+id/card_aadhar_front"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     app:cardCornerRadius="12dp"
@@ -121,6 +121,7 @@
                     app:layout_constraintVertical_bias="0.296">
 
                     <ImageView
+                        android:id="@+id/img_aadhar_front"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
@@ -141,10 +142,10 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guideline"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/img_aadhar_front" />
+                    app:layout_constraintTop_toBottomOf="@+id/card_aadhar_front" />
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/img_aadhar_back"
+                    android:id="@+id/card_aadhar_back"
                     android:layout_width="0dp"
                     android:layout_height="150dp"
                     android:layout_marginStart="12dp"
@@ -158,6 +159,7 @@
                     app:layout_constraintVertical_bias="0.296">
 
                     <ImageView
+                        android:id="@+id/img_aadhar_back"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
@@ -178,7 +180,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/guideline"
-                    app:layout_constraintTop_toBottomOf="@+id/img_aadhar_back" />
+                    app:layout_constraintTop_toBottomOf="@+id/card_aadhar_back" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -197,7 +199,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/img_pan"
+                android:id="@+id/card_pan"
                 android:layout_width="240dp"
                 android:layout_height="170dp"
                 android:layout_gravity="center"
@@ -212,6 +214,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:id="@+id/img_pan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -219,7 +222,6 @@
                     tools:ignore="ContentDescription" />
 
             </com.google.android.material.card.MaterialCardView>
-
 
             <TextView
                 android:id="@+id/dl_text"
@@ -233,10 +235,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_pan" />
+                app:layout_constraintTop_toBottomOf="@id/card_pan" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/img_dl"
+                android:id="@+id/card_dl"
                 android:layout_width="240dp"
                 android:layout_height="170dp"
                 android:layout_gravity="center"
@@ -251,6 +253,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:id="@+id/img_dl"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -272,10 +275,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_dl" />
+                app:layout_constraintTop_toBottomOf="@id/card_dl" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/img_rc"
+                android:id="@+id/card_rc"
                 android:layout_width="240dp"
                 android:layout_height="170dp"
                 android:layout_gravity="center"
@@ -290,6 +293,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:id="@+id/img_rc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -311,10 +315,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_rc" />
+                app:layout_constraintTop_toBottomOf="@id/card_rc" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/img_acc_details"
+                android:id="@+id/card_acc_details"
                 android:layout_width="240dp"
                 android:layout_height="170dp"
                 android:layout_gravity="center"
@@ -329,6 +333,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:id="@+id/img_acc_details"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -350,10 +355,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_acc_details" />
+                app:layout_constraintTop_toBottomOf="@id/card_acc_details" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/img_cancelled_check"
+                android:id="@+id/card_cancelled_check"
                 android:layout_width="240dp"
                 android:layout_height="170dp"
                 android:layout_gravity="center"
@@ -368,6 +373,7 @@
                 app:layout_constraintTop_toBottomOf="@id/cancelled_text">
 
                 <ImageView
+                    android:id="@+id/img_cancelled_check"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -387,10 +393,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/img_cancelled_check" />
+                app:layout_constraintTop_toBottomOf="@id/card_cancelled_check" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/img_high_school_marksheet"
+                android:id="@+id/card_high_school_marksheet"
                 android:layout_width="240dp"
                 android:layout_height="170dp"
                 android:layout_gravity="center"
@@ -405,6 +411,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:id="@+id/img_high_school_marksheet"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
@@ -429,7 +436,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/img_high_school_marksheet" />
+                app:layout_constraintTop_toBottomOf="@+id/card_high_school_marksheet" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

@@ -176,4 +176,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (dialog != null && dialog.isShowing()) {
+            dialog.cancel();
+        }
+    }
+
 }

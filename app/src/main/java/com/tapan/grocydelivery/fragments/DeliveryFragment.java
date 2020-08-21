@@ -65,7 +65,7 @@ public class DeliveryFragment extends BaseFragment {
 
 
                 BadgeDrawable badgeDrawableAll = Objects.requireNonNull(tabLayout.getTabAt(0)).getOrCreateBadge();
-                badgeDrawableAll.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
+               // badgeDrawableAll.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
                 badgeDrawableAll.setHorizontalOffset(-12);
                 if (allCount != 0) {
                     badgeDrawableAll.setNumber(allCount);
@@ -76,7 +76,7 @@ public class DeliveryFragment extends BaseFragment {
 
 
                 BadgeDrawable badgeDrawableUnder = Objects.requireNonNull(tabLayout.getTabAt(1)).getOrCreateBadge();
-                badgeDrawableUnder.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
+                // badgeDrawableUnder.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
                 badgeDrawableUnder.setHorizontalOffset(-22);
                 if (underCount != 0) {
                     badgeDrawableUnder.setNumber(underCount);
@@ -86,7 +86,7 @@ public class DeliveryFragment extends BaseFragment {
                 }
 
                 BadgeDrawable badgeDrawableDelivered = Objects.requireNonNull(tabLayout.getTabAt(2)).getOrCreateBadge();
-                badgeDrawableDelivered.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
+                //  badgeDrawableDelivered.setBadgeTextColor(getResources().getColor(R.color.white, Objects.requireNonNull(getContext()).getTheme()));
                 badgeDrawableDelivered.setHorizontalOffset(-16);
                 if (delCount != 0) {
                     badgeDrawableDelivered.setNumber(delCount);
