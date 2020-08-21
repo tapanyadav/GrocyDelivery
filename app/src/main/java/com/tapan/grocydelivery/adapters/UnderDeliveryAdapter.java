@@ -56,8 +56,8 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
         holder.textViewUnderOrderDateTime.setText(model.getOrderDateTime());
         String statusPick = "<u>" + model.getPickStatus() + "</u>";
         holder.textViewPickedUnder.setText(Html.fromHtml(statusPick));
-        Glide.with(context).load(model.getUserImage()).into(holder.imageViewUnderUserImage);
-        Glide.with(context).load(model.getMapLocation()).into(holder.imageViewUnderMapLocationTrack);
+        Glide.with(context).load(model.getUserImage()).placeholder(R.drawable.loading_photo).into(holder.imageViewUnderUserImage);
+        Glide.with(context).load(model.getMapLocation()).placeholder(R.drawable.loading_photo).into(holder.imageViewUnderMapLocationTrack);
 
         holder.buttonUnderMarkDelivered.setOnClickListener(v -> {
             updateStatusData(getSnapshots().getSnapshot(position).getId());
@@ -92,7 +92,7 @@ public class UnderDeliveryAdapter extends FirestoreRecyclerAdapter<DeliveryModel
         assert textViewShopAddress != null;
         textViewShopAddress.setText(deliveryModel.getShopAddress());
         assert imageViewShopImage != null;
-        Glide.with(context).load(deliveryModel.getShopImage()).into(imageViewShopImage);
+        Glide.with(context).load(deliveryModel.getShopImage()).placeholder(R.drawable.loading_photo).into(imageViewShopImage);
         assert imageViewClose != null;
         imageViewClose.setImageResource(R.drawable.ic_baseline_close);
         imageViewClose.setOnClickListener(v -> alertDialog.dismiss());

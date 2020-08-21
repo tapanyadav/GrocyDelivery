@@ -35,7 +35,7 @@ public class DeliveryHistoryAdapter extends FirestoreRecyclerAdapter<DeliveryMod
     @Override
     protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull DeliveryModel model) {
 
-        Glide.with(context).load(model.getUserImage()).into(holder.imageViewUserImage);
+        Glide.with(context).load(model.getUserImage()).placeholder(R.drawable.loading_photo).into(holder.imageViewUserImage);
         holder.textViewUserName.setText(model.getUserName());
         holder.textViewUserAddress.setText(model.getUserAddress());
         holder.textViewOrderDate.setText(model.getOrderDate());
@@ -79,7 +79,7 @@ public class DeliveryHistoryAdapter extends FirestoreRecyclerAdapter<DeliveryMod
         assert textViewShopAddress != null;
         textViewShopAddress.setText(deliveryModel.getShopAddress());
         assert imageViewShopImage != null;
-        Glide.with(context).load(deliveryModel.getShopImage()).into(imageViewShopImage);
+        Glide.with(context).load(deliveryModel.getShopImage()).placeholder(R.drawable.loading_photo).into(imageViewShopImage);
 
         assert imageViewClose != null;
         imageViewClose.setImageResource(R.drawable.ic_baseline_close);

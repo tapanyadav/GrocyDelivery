@@ -55,7 +55,7 @@ public class NotificationAdapter extends FirestoreRecyclerAdapter<DeliveryModel,
         holder.textViewShopName.setText(model.getShopName());
         holder.textViewShopAddress.setText(model.getShopAddress());
         holder.textViewOrderDateTime.setText(model.getOrderDateTime());
-        Glide.with(context).load(model.getShopImage()).into(holder.imageViewShopImage);
+        Glide.with(context).load(model.getShopImage()).placeholder(R.drawable.loading_photo).into(holder.imageViewShopImage);
 
         checkStatusData(holder.buttonAccept);
 

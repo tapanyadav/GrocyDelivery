@@ -58,8 +58,8 @@ public class ProfileFragment extends BaseFragment {
         textViewTodayPoint = view.findViewById(R.id.text_today_points);
         textViewMonthlyPoint = view.findViewById(R.id.text_monthly_points);
 
-        Glide.with(view.getContext()).load(Constants.linkGradientMain).placeholder(R.drawable.loading_new).into(imageViewReviewCount);
-        Glide.with(view.getContext()).load(Constants.linkSubu).placeholder(R.drawable.loading_new).into(imageViewDelCount);
+        Glide.with(view.getContext()).load(Constants.linkGradientMain).placeholder(R.drawable.loading_photo).into(imageViewReviewCount);
+        Glide.with(view.getContext()).load(Constants.linkSubu).placeholder(R.drawable.loading_photo).into(imageViewDelCount);
 
         button.setOnClickListener(v -> logoutDialog(view));
         linearLayoutSetting.setOnClickListener(v -> {

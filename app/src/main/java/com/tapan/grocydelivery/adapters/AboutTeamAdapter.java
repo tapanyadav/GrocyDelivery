@@ -71,8 +71,8 @@ public class AboutTeamAdapter extends RecyclerView.Adapter<AboutTeamAdapter.Team
         }
 
         void setItems(AboutTeamModel aboutTeamModel) {
-            Glide.with(context).load(aboutTeamModel.getImageBack()).placeholder(R.drawable.loading_new).into(imageViewBack);
-            Glide.with(context).load(aboutTeamModel.getImageTeam()).placeholder(R.drawable.loading_new).into(imageViewTeam);
+            Glide.with(context).load(aboutTeamModel.getImageBack()).into(imageViewBack);
+            Glide.with(context).load(aboutTeamModel.getImageTeam()).placeholder(R.drawable.loading_photo).into(imageViewTeam);
             textViewName.setText(aboutTeamModel.getNameTeam());
             textViewDesignation.setText(aboutTeamModel.getTeamDesignation());
         }

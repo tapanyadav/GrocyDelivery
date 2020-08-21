@@ -72,7 +72,7 @@ public class VisionAdapter extends RecyclerView.Adapter<VisionAdapter.VisionView
 
         void setItems(VisionModel visionModel) {
 
-            Glide.with(context).load(visionModel.getImageVision()).placeholder(R.drawable.loading_new).into(imageViewVision);
+            Glide.with(context).load(visionModel.getImageVision()).placeholder(R.drawable.loading_photo).into(imageViewVision);
             textViewVisionHead.setText(visionModel.getTextVisionHead());
             textViewVisionData.setText(visionModel.getTextVisionData());
         }

@@ -137,9 +137,7 @@ public class EditProfileActivity extends BaseActivity {
             if (MainActivity.profile_activity_data.containsKey("delProfileImage")) {
                 String image = Objects.requireNonNull(MainActivity.profile_activity_data.get("delProfileImage")).toString();
                 mainImageURI = Uri.parse(image);
-                Glide.with(imageViewDelImage.getContext())
-                        .load(image)
-                        .into(imageViewDelImage);
+                Glide.with(imageViewDelImage.getContext()).load(image).placeholder(R.drawable.loading_photo).into(imageViewDelImage);
             }
 
             editTextName.addTextChangedListener(new TextWatcher() {

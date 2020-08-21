@@ -203,9 +203,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
                 if (Objects.requireNonNull(document.getData()).containsKey("delProfileImage")) {
                     profile_activity_data.put("delImage", document.get("delProfileImage"));
-                    Glide.with(getApplicationContext())
-                            .load((String) document.getData().get("delProfileImage"))
-                            .into(imageViewDelImage);
+                    Glide.with(getApplicationContext()).load((String) document.getData().get("delProfileImage")).placeholder(R.drawable.loading_photo).into(imageViewDelImage);
                 }
             }
         });
