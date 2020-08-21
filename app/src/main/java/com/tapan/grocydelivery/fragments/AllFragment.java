@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.adapters.DeliveryAllAdapter;
@@ -26,9 +24,6 @@ public class AllFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_all, container, false);
 
         recyclerViewDeliveryAll = view.findViewById(R.id.recycler_all);
-
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
 
         showProgress(view.getContext());
         Query query = firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).collection(Constants.notificationCollection).whereEqualTo("allFragment", true);

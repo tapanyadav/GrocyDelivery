@@ -15,8 +15,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.tapan.grocydelivery.R;
 import com.tapan.grocydelivery.utils.Constants;
 
@@ -31,8 +29,6 @@ public class DeliveryFragment extends BaseFragment {
     public View provideYourFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_delivery, container, false);
 
-        firebaseFirestore = FirebaseFirestore.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
         tabLayout = view.findViewById(R.id.tabLayout);
         ViewPager viewPager = view.findViewById(R.id.viewPager);
         viewPager.setOffscreenPageLimit(3);

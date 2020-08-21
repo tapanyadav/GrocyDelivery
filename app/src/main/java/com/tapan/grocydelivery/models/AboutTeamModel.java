@@ -2,9 +2,7 @@ package com.tapan.grocydelivery.models;
 
 public class AboutTeamModel {
 
-    private String imageTeam;
-    private String nameTeam, teamDesignation;
-    private String imageBack;
+    private String imageTeam, nameTeam, teamDesignation, imageBack;
 
     public AboutTeamModel(String imageTeam, String nameTeam, String teamDesignation, String imageBack) {
         this.imageTeam = imageTeam;

@@ -2,8 +2,7 @@ package com.tapan.grocydelivery.models;
 
 public class VisionModel {
 
-    private String imageVision;
-    private String textVisionHead, textVisionData;
+    private String imageVision, textVisionHead, textVisionData;
 
     public VisionModel(String imageVision, String textVisionHead, String textVisionData) {
         this.imageVision = imageVision;

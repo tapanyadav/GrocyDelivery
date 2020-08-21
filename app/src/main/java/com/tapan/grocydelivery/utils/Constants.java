@@ -4,12 +4,11 @@ public class Constants {
 
     public static final String mainDelCollection = "DeliveryBoy";
     public static final String notificationCollection = "Notifications";
-//    public static final String mainDelCollection = "DeliveryBoy";
 
     public static final String splashTag = "SplashActivity";
+    public static final String messagingTag = "Messaging";
     //All image links
     public static final String linkSubu = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2FSubu.jpg?alt=media&token=e3047138-22ff-457a-8391-8dff16a8ef60";
-    // public static final String linkTeal = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2FTeal%20Love.jpg?alt=media&token=cb59f863-d4f8-45ae-bd26-18ff98bd05fa";
     public static final String linkMission = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2Fmission.png?alt=media&token=16859a8d-cda2-4dfc-b0eb-494c949522ee";
     public static final String linkVision = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2Fvision_new.png?alt=media&token=e661e531-c382-4ad4-9705-8f99fdfbdaeb";
     public static final String linkValues = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2Fvalues.png?alt=media&token=3986417e-a159-4099-96ac-3e2208f417a7";

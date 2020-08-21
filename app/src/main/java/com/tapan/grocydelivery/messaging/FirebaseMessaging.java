@@ -34,7 +34,6 @@ import java.util.Objects;
 
 public class FirebaseMessaging extends FirebaseMessagingService {
 
-    public static final String TAG = "MyTag";
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth firebaseAuth;
 
@@ -100,16 +99,16 @@ public class FirebaseMessaging extends FirebaseMessagingService {
                         firebaseFirestore.collection(Constants.mainDelCollection).document(Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid())
                                 .collection(Constants.notificationCollection).add(notificationHashMap).addOnCompleteListener(task1 -> {
                             if (task1.isSuccessful()) {
-                                Log.d(TAG, "Notification data stores successfully.");
+                                Log.d(Constants.messagingTag, "Notification data stores successfully.");
                             } else {
-                                Log.d(TAG, "Notification data not stores successfully.");
+                                Log.d(Constants.messagingTag, "Notification data not stores successfully.");
                             }
                         });
                     }
                 }
             });
 
-            Log.d(TAG, "shopN: " + data.get("shopName"));
+            Log.d(Constants.messagingTag, "shopN: " + data.get("shopName"));
             if (picture_url != null && !"".equals(picture_url)) {
                 URL url = new URL(picture_url);
                 Bitmap bigPicture = BitmapFactory.decodeStream(url.openConnection().getInputStream());
@@ -136,7 +135,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
             channel.enableLights(true);
             channel.setLightColor(R.color.colorPrimary);
             channel.enableVibration(true);
-            channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            channel.setVibrationPattern(new long[]{100, 200, 300, 400, 300, 200, 100});
             assert notificationManager != null;
             notificationManager.createNotificationChannel(channel);
         }

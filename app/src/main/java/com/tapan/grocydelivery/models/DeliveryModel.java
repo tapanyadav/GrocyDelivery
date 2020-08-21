@@ -21,7 +21,6 @@ public class DeliveryModel {
         this.orderDeliveryStatus = orderDeliveryStatus;
         this.pickStatus = pickStatus;
         this.deliveredTo = deliveredTo;
-
     }
 
     public String getUserImage() {
