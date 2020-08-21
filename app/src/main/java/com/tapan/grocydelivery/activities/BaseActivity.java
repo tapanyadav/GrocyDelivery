@@ -42,7 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     String currentUserId;
     FirebaseUser currentUser;
     boolean doubleBackToExitPressedOnce = false;
-    boolean isDefaultModeOn = false;
+    boolean isDefaultModeOn;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,18 +56,27 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
-    void switchDayNight(RadioGroup radioGroup, RadioButton radioButtonLight, RadioButton radioButtonDark) {
+    public void checkDayNight() {
+        SharedPreferences sharedPreferencesCheck = getSharedPreferences("sharedPref", MODE_PRIVATE);
+        final SharedPreferences.Editor editorCheck = sharedPreferencesCheck.edit();
+        isDefaultModeOn = sharedPreferencesCheck.getBoolean("isDefaultModeOn", false);
 
         int currentCheck = getApplicationContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         switch (currentCheck) {
             case Configuration.UI_MODE_NIGHT_NO:
-                isDefaultModeOn = false;
+                Toast.makeText(this, "Light: " + isDefaultModeOn, Toast.LENGTH_SHORT).show();
+                editorCheck.putBoolean("isDefaultModeOn", false);
+                editorCheck.apply();
                 break;
             case Configuration.UI_MODE_NIGHT_YES:
-                Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
-                isDefaultModeOn = true;
+                Toast.makeText(this, "Dark: " + isDefaultModeOn, Toast.LENGTH_SHORT).show();
+                editorCheck.putBoolean("isDefaultModeOn", true);
+                editorCheck.apply();
                 break;
         }
+    }
+
+    void switchDayNight(RadioGroup radioGroup, RadioButton radioButtonLight, RadioButton radioButtonDark) {
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         final SharedPreferences.Editor editor = sharedPreferences.edit();

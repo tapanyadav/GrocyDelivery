@@ -82,7 +82,6 @@ public class AboutUsActivity extends BaseActivity {
         });
         viewPager2About.setPageTransformer(compositePageTransformer);
         viewPager2Vision.setPageTransformer(compositePageTransformer);
-
         viewPager2About.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -92,7 +91,6 @@ public class AboutUsActivity extends BaseActivity {
             }
 
         });
-
         viewPager2Vision.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {

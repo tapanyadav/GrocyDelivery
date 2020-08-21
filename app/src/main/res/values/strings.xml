@@ -141,8 +141,8 @@
     <string name="profile_monthly_points">Monthly Points:</string>
     <string name="profile_monthly_count">0</string>
     <string name="profile_total_reviews">Total reviews</string>
-    <string name="profile_review_count">8</string>
-    <string name="profile_del_count">12</string>
+    <string name="profile_review_count">0</string>
+    <string name="profile_del_count">0</string>
     <string name="profile_total_deliveries">Total deliveries</string>
     <string name="profile_accept_delivery">Accept delivery</string>
     <string name="profile_account_setting">Account setting</string>

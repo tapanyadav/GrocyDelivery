@@ -79,7 +79,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         deliveryFragment = new DeliveryFragment();
         supportFragment = new SupportFragment();
         profileFragment = new ProfileFragment();
+
         setToolbar(drawerLayout);
+        checkDayNight();
+
         checkDocumentStatus();
 
         String notificationFragmentValue = getIntent().getStringExtra("notificationFragment");
