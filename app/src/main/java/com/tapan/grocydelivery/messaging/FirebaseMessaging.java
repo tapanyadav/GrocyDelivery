@@ -49,7 +49,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
     }
 
     private void sendNotification(RemoteMessage.Notification notification, Map<String, String> data) {
-        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.noti_stroke);
+        Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_notification_icon);
 
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -68,7 +68,7 @@ public class FirebaseMessaging extends FirebaseMessagingService {
                 .setColor(getResources().getColor(R.color.colorPrimary, getTheme()))
                 .setLights(Color.RED, 1000, 300)
                 .setDefaults(Notification.DEFAULT_VIBRATE)
-                .setSmallIcon(R.drawable.ic_baseline_notifications);
+                .setSmallIcon(R.drawable.ic_notification_icon);
 
         try {
             String picture_url = data.get("picture_url");
