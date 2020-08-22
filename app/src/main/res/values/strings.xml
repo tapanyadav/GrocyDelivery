@@ -60,10 +60,13 @@
     //under_review
     <string name="under_review_docs">Under Review</string>
     <string name="under_review_submitted">Your documents are submitted.</string>
+    <string name="under_review_reject">We checked your documents.</string>
     <string name="under_review_wait">Please wait until your documents are not verified.\n\nOur executive will contact you soon.</string>
     <string name="under_browse_all_faqs">Browse all FAQs</string>
     <string name="under_incentives_rules">Incentives rules</string>
     <string name="under_contact_us">Contact us</string>
+    <string name="under_review_cancel">Sorry! Your application is rejected.</string>
+    <string name="under_review_accept">Hurray! Your application is accepted.</string>
 
     //city_not_available
     <string name="city_not_available">City Status</string>
@@ -241,6 +244,12 @@
     <string name="btn_yes_log_out">Yes, log out</string>
     <string name="web_terms">Terms of Service</string>
     <string name="web_privacy">Privacy Policy</string>
+
+    //docs_reject_dialog
+    <string name="reject_reason_head">Reason</string>
+    <string name="reason_reject">Some of your documents are not clear or we did not recognise your identity from your submitted documents.</string>
+    <string name="reason_upload_again">Please upload your documents again if they are belongs to you and make sure that this time their quality is good.</string>
+    <string name="reject_upload_again">Upload again</string>
 
 
 </resources>

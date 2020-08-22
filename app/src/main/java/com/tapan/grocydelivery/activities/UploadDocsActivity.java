@@ -176,6 +176,7 @@ public class UploadDocsActivity extends BaseActivity {
             if ("image_marksheet".equals(image_id)) {
                 updateStatus.put("addDocumentStatus", true);
                 updateStatus.put("reviewStatus", false);
+                updateStatus.put("applicationStatus", "under");
                 firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).update(updateStatus);
                 hideProgressDialog();
                 Toast.makeText(this, "All documents are uploaded successfully...", Toast.LENGTH_LONG).show();

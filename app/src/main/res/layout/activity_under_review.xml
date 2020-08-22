@@ -47,71 +47,238 @@
         android:layout_height="match_parent"
         android:layout_marginTop="52dp">
 
-        <ImageView
-            android:id="@+id/image_header"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutUnder"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:src="@drawable/under_verification"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guidelineImage"
-            tools:ignore="ContentDescription" />
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/image_header"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/under_verification"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineImage"
+                tools:ignore="ContentDescription" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0" />
+
+            <TextView
+                android:id="@+id/under_review_submitted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/under_review_submitted"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/guidelineSubmitText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_header" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineSubmitText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.46" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/under_review_wait"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineSubmitText" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.72" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutReject"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/image_headerReject"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/review_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineImageCancel"
+                tools:ignore="ContentDescription" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineImageCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0" />
+
+            <TextView
+                android:id="@+id/under_review_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/under_review_reject"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/guidelineCancelText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image_headerReject" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCancelText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.46" />
+
+            <TextView
+                android:id="@+id/text_review_cancel_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_cancel_reason" />
+
+            <TextView
+                android:id="@+id/text_cancel_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/under_review_cancel"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineCancelText" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineCancelContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.72" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutAccept"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/image_headerAccept"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:src="@drawable/review_accepted"
+                app:layout_constraintBottom_toBottomOf="@+id/guidelineImageAccept"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineImageAccept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.38" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineAcceptText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <TextView
+                android:id="@+id/text_accept"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/josefin_sans"
+                android:gravity="center_horizontal"
+                android:text="@string/under_review_accept"
+                android:textAlignment="center"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guidelineAcceptText" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0" />
-
-        <TextView
-            android:id="@+id/under_review_submitted"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="18dp"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/josefin_sans"
-            android:gravity="center_horizontal"
-            android:text="@string/under_review_submitted"
-            android:textAlignment="center"
-            android:textColor="@color/textColor"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/guidelineSubmitText"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_header" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineSubmitText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.46" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="28dp"
-            android:layout_marginEnd="18dp"
-            android:fontFamily="@font/josefin_sans"
-            android:gravity="center_horizontal"
-            android:text="@string/under_review_wait"
-            android:textAlignment="center"
-            android:textColor="@color/textColor"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guidelineSubmitText" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineContact"
+            android:id="@+id/guidelineMainContact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -129,7 +296,7 @@
             app:layout_constraintBottom_toTopOf="@id/linear_contact_us"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guidelineContact">
+            app:layout_constraintTop_toBottomOf="@+id/guidelineMainContact">
 
             <TextView
                 android:layout_width="0dp"
@@ -191,6 +358,23 @@
                 tools:ignore="ContentDescription" />
 
         </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_review_next"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/register_btn_next"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineMainContact" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
