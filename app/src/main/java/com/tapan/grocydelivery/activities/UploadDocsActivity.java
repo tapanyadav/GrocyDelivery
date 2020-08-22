@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.UploadTask;
 import com.tapan.grocydelivery.R;
@@ -185,7 +187,7 @@ public class UploadDocsActivity extends BaseActivity {
                 startActivity(intent);
             }
             if (task1.isSuccessful()) {
-                Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                Log.i(Constants.uploadTag, "Uploading");
             } else {
                 hideProgressDialog();
                 String error = Objects.requireNonNull(task1.getException()).getMessage();
@@ -230,42 +232,42 @@ public class UploadDocsActivity extends BaseActivity {
                 switch (image_name) {
                     case "image_aadhar_front":
                         aadharFrontURI = result.getUri();
-                        imageViewAadharFront.setImageURI(aadharFrontURI);
+                        Glide.with(this).load(aadharFrontURI.getPath()).into(imageViewAadharFront);
                         compressImage(aadharFrontURI, image_name);
                         break;
                     case "image_aadhar_back":
                         aadharBackURI = result.getUri();
-                        imageViewAadharBack.setImageURI(aadharBackURI);
+                        Glide.with(this).load(aadharBackURI.getPath()).into(imageViewAadharBack);
                         compressImage(aadharBackURI, image_name);
                         break;
                     case "image_rc":
                         rcURI = result.getUri();
-                        imageViewRc.setImageURI(rcURI);
+                        Glide.with(this).load(rcURI.getPath()).into(imageViewRc);
                         compressImage(rcURI, image_name);
                         break;
                     case "image_dl":
                         dlURI = result.getUri();
-                        imageViewDl.setImageURI(dlURI);
+                        Glide.with(this).load(dlURI.getPath()).into(imageViewDl);
                         compressImage(dlURI, image_name);
                         break;
                     case "image_acc_details":
                         passURI = result.getUri();
-                        imageViewPass.setImageURI(passURI);
+                        Glide.with(this).load(passURI.getPath()).into(imageViewPass);
                         compressImage(passURI, image_name);
                         break;
                     case "image_pan_card":
                         panURI = result.getUri();
-                        imageViewPan.setImageURI(panURI);
+                        Glide.with(this).load(panURI.getPath()).into(imageViewPan);
                         compressImage(panURI, image_name);
                         break;
                     case "image_cancelled_cheque":
                         chequeURI = result.getUri();
-                        imageViewCancelledCheque.setImageURI(chequeURI);
+                        Glide.with(this).load(chequeURI.getPath()).into(imageViewCancelledCheque);
                         compressImage(chequeURI, image_name);
                         break;
                     case "image_marksheet":
                         marksheetUri = result.getUri();
-                        imageViewMarksheet.setImageURI(marksheetUri);
+                        Glide.with(this).load(marksheetUri.getPath()).into(imageViewMarksheet);
                         compressImage(marksheetUri, image_name);
                         break;
                 }

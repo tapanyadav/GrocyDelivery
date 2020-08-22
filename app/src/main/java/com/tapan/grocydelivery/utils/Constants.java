@@ -7,6 +7,7 @@ public class Constants {
 
     public static final String splashTag = "SplashActivity";
     public static final String messagingTag = "Messaging";
+    public static final String uploadTag = "UploadDocsActivity";
     //All image links
     public static final String linkSubu = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2FSubu.jpg?alt=media&token=e3047138-22ff-457a-8391-8dff16a8ef60";
     public static final String linkMission = "https://firebasestorage.googleapis.com/v0/b/grocy-6c5b5.appspot.com/o/About_us_image%2Fmission.png?alt=media&token=16859a8d-cda2-4dfc-b0eb-494c949522ee";
