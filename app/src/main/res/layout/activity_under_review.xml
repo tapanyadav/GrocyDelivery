@@ -34,7 +34,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/under_review_docs"
                     android:textColor="@color/textColor"
-                    android:textSize="22sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -85,7 +85,7 @@
                 android:text="@string/under_review_submitted"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/guidelineSubmitText"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -110,7 +110,7 @@
                 android:text="@string/under_review_wait"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +163,7 @@
                 android:text="@string/under_review_reject"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/guidelineCancelText"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +188,7 @@
                 android:gravity="center_horizontal"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -206,7 +206,7 @@
                 android:text="@string/under_review_cancel"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -268,7 +268,7 @@
                 android:text="@string/under_review_accept"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -282,12 +282,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.72" />
+            app:layout_constraintGuide_percent="0.78" />
 
         <LinearLayout
             android:id="@+id/linear_all_faq"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -308,7 +308,7 @@
                 android:padding="12dp"
                 android:text="@string/under_browse_all_faqs"
                 android:textColor="@color/textColor"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -323,11 +323,11 @@
         <LinearLayout
             android:id="@+id/linear_contact_us"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="0dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="18dp"
             android:background="@drawable/round_corner"
             android:clickable="true"
             android:focusable="true"
@@ -347,7 +347,7 @@
                 android:padding="12dp"
                 android:text="@string/under_contact_us"
                 android:textColor="@color/textColor"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -368,7 +368,7 @@
             android:text="@string/register_btn_next"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:visibility="gone"
             app:cornerRadius="10dp"
             app:layout_constraintBottom_toBottomOf="parent"

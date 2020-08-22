@@ -34,7 +34,7 @@
                     android:gravity="center_horizontal"
                     android:text="@string/city_not_available"
                     android:textColor="@color/textColor"
-                    android:textSize="22sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
