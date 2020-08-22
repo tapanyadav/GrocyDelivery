@@ -45,6 +45,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="none"
         android:layout_marginTop="52dp">
 
         <LinearLayout
@@ -175,7 +176,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_agree_req_docs"
                 android:layout_width="match_parent"
@@ -184,7 +184,7 @@
                 android:layout_marginTop="18dp"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="20dp"
-                android:text="@string/required_agree"
+                android:text="@string/register_btn_next"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:textSize="16sp"

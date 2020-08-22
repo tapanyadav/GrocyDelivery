@@ -250,6 +250,8 @@
     <string name="reason_reject">Some of your documents are not clear or we did not recognise your identity from your submitted documents.</string>
     <string name="reason_upload_again">Please upload your documents again if they are belongs to you and make sure that this time their quality is good.</string>
     <string name="reject_upload_again">Upload again</string>
+    <string name="doc_confirm_message">Please ensure that you have all the required documents before go to the next page.</string>
+    <string name="doc_quality">And also make sure that quality of upload documents is good.</string>
 
 
 </resources>

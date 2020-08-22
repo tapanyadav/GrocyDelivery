@@ -131,6 +131,24 @@ public class UnderReviewActivity extends BaseActivity {
 
         TextView textViewClose = alertDialog.findViewById(R.id.reason_head);
         Button buttonUploadAgain = alertDialog.findViewById(R.id.btn_reject_upload);
+
+        assert textViewClose != null;
+        textViewClose.setOnClickListener(v -> alertDialog.dismiss());
+
+        assert buttonUploadAgain != null;
+        buttonUploadAgain.setOnClickListener(v -> {
+            HashMap<String, Object> hashMapChange = new HashMap<>();
+            hashMapChange.put("addDocumentStatus", false);
+            firebaseFirestore.collection(Constants.mainDelCollection).document(getCurrentUserId()).update(hashMapChange).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Intent intent = new Intent(this, RequiredDocsActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
     }
 
     private void changeReviewStatus() {

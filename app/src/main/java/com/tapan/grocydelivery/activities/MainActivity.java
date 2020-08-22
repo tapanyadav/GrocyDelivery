@@ -160,7 +160,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                             QuerySnapshot queryDocumentSnapshots = task1.getResult();
                             assert queryDocumentSnapshots != null;
                             if (Objects.equals(queryDocumentSnapshots.getDocuments().get(0).get("addDocumentStatus"), false)) {
-                                Toast.makeText(MainActivity.this, "Please! upload documents...", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "Please! upload documents first...", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(MainActivity.this, RequiredDocsActivity.class);
                                 startActivity(intent);
                                 finish();
